@@ -21,25 +21,19 @@ function findHighestZIndex(elem)
 }
 var mode;
 function popup(name){
-	
 	event.preventDefault();
 	var contents = document.getElementById(name);
 	var hide = document.getElementsByClassName('hidden');
-	
-	 if(mode == 0){
+	var mode = 0;
+	if(contents.style.display === "flex"){
 	contents.style.display = "none";
 	hide.style.display = "none";
-	mode = 1;
 	}
 	else{
-		contents.style.display = "block";
-		hide.style.display = "block";
-		mode = 0;
-	} 
-	console.log(contents);
-	//alert(name);*/
-
-	console.log("This is running");
+		contents.style.display = "flex";
+		hide.style.display = "flex";
+	}
+	//alert(name);
 }
 function nightmode(){
 	console.log("Nightmode is working")

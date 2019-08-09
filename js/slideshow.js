@@ -14,7 +14,7 @@ hmm[0].style.display = "none";*/
 setInterval(slideshow, 3000); */
 
 		
-		var slidesCounter = 0;
+	
 			var slides = document.getElementsByClassName('slide');
 			
 		function hide(){
@@ -37,21 +37,40 @@ setInterval(slideshow, 3000); */
 			
 		} 
 		var slidesCounter = 0;
+		
 		function slideshow(){
-			
+			for(var stackOrder = 0; stackOrder < slides.length; stackOrder++){
+			slides[stackOrder].style.zIndex = stackOrder;
+			console.log("stack")
+			}
 			slides[slidesCounter].classList.remove("show");
-			slides[slidesCounter].style.display = "none";	
+			slides[slidesCounter].classList.add("remove");
+			//console.log(slidesCounter);
 			
+			//slides[slidesCounter].style.display = "none";	
+			console.log("slides" + slidesCounter);
+			//console.log("slides" + slidesCounter +"slides[slidesCounter].style.display === none =" + slides[slidesCounter].style.display === "none");
 			slidesCounter++;
+			console.log("slides" + slidesCounter);
 			if(slidesCounter == slides.length){
-				slidesCounter = 0
+				slidesCounter = 0;
 			}
-			var preload = slidesCounter +1;
-			if(preload == slides.length){
-				preload = 0;
-			}
-			slides[preload].classList.add("show")
-			slides[slidesCounter].style.display = "none";	
+			var previousSlide = slidesCounter - 1;
+			slides[slidesCounter].classList.add("show")
+			slides[slidesCounter].classList.remove("remove")
+			slides[slidesCounter].style.display = "flex";	
+			
+			setTimeout(function(){
+				for(var i = 0; i <slides.length; i++){
+					if(i != slidesCounter){
+					slides[i].style.display = "none";		
+					}
+					
+				}
+				
+			},1000)
+			console.log("slides" + slidesCounter);
+			
 		}
 		/*
 			slides[slidesCounter].classList.remove("hide");
@@ -100,3 +119,4 @@ setInterval(slideshow, 3000); */
 			*/
 		
 //setInterval(slideshow, 3000);
+

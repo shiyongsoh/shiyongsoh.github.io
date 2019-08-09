@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<!--verifed @ 8.47pm, 1/6/2019-->
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+
+	<meta name="description" content="Overview of the webpage">
+	<meta name="author" content="Soh Shi Yong">
+	<meta name="format-detection" content="telephone=no">
+	<link rel="stylesheet" href="css/home.css">
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="bootstrap/css/bootstrap-grid.min.css">
+	<link rel="stylesheet" href="bootstrap/css/bootstrap-reboot.min.css">
+	<link href="css/fontawesome-free/css/all.min.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+	<link rel="icon" type="image/png" href="images/yong.png">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="js/slideshow.js"></script>
+	<script src="index.js"></script>
+	<title>Home</title>
+</head>
+
+<body>
+	<!--this defines the main top protion of the webpage-->
+	<!-- <a href="#" onclick="nightmode1()">Nightmode</a> -->
+	<header>
+		<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+		<a id="daynight" class="nightmode nightfont btn smaller">Night Mode</a>		  <div class="container">
+			<a class="navbar-brand js-scroll-trigger" href="#page-top"></a>
+			<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+			  Menu
+			  <i class="fas fa-bars"></i>
+			</button>
+			
+			<div class="collapse navbar-collapse" id="navbarResponsive">
+			  <ul class="navbar-nav ml-auto">
+			   <li class="nav-item">
+				  <a class="nav-link js-scroll-trigger" href="index.html">Home</a>
+				</li>
+				<li class="nav-item">
+				  <a class="nav-link" href="achievements.html">Achievements</a>
+				</li>
+				<li class="nav-item">
+				  <a class="nav-link js-scroll-trigger" href="Projects.html">Projects</a>
+				</li>
+				<li class="nav-item">
+				  <a class="nav-link js-scroll-trigger" href="contact.html">Contact</a>
+				</li>
+				 <li class="nav-item">
+				  <a class="nav-link js-scroll-trigger" href="about.html">About</a>
+				</li>
+			  </ul>
+			</div>
+			
+		  </div>
+		</nav>
+	</header>
+	<main>
+
+			<section class="container-fluid greeter">
+			
+			<div class="goBehind">
+				<img class="slide show" src="images/20190118_161509.jpg">
+				<img class="slide remove" src="images/DSC_0012.jpg">
+				<img class="slide remove" src="images/IMG_1833.jpg">
+			</div>
+			<div class="container align-items-center caption">
+				  <h1 class="mx-auto my-0 text-uppercase text-primary">Hi, I am Shi Yong</h1>
+				  <h3 class="text-white-50 mx-auto mt-2 mb-5"></h3>
+				  <a href="#next" class="btn btn-primary js-scroll-trigger">This is my story</a>
+				  <button onclick="slideshow()">slide</button>
+				  <button onclick="hide()">hide</button>
+				  <button onclick="show()">show</button>
+			</div>
+			
+		</section>
+			<!--Adds a background to cover the image when scrolling-->
+			<section id="projects-home" class="content projects-section">
+      <div class="container py-5" id="next">
+        <!-- Project One Row -->
+		<!--Copy from here-->
+        <div id="about" class="row justify-content-center no-gutters mb-5 mb-lg-0">
+          <div id="p2" class="col-lg-6 js-scroll-trigger">
+            <img class="img-fluid" src="images/20171001_160210.jpg" alt="">
+          </div>
+          <div class="col-lg-6">
+            <div class="bg-dark px-3 text-center h-100 project">
+              <div class="d-flex h-100">
+                <div class="project-text w-100 my-auto text-center text-lg-left">
+                  <h3 class="text-white">My Achievements</h3>
+                  <p class="mb-0 text-white-50">Your computer can probably do a lot more than you think. Espicially modern windows computer, they are optimsed to run on most hardware. <a href="computer.html">Read on and find out more</a></p>
+                  <hr class="d-none d-lg-block mb-0 ml-0">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+<!--To here for align right codes-->
+        <!-- Project Two Row -->
+		<!--Copy from here-->
+        <div class="row justify-content-center no-gutters">
+          <div class="col-lg-6">
+            <img class="img-fluid cover" src="images/DSC_0010.jpg" alt="">
+          </div>
+          <div class="col-lg-6 order-lg-first">
+            <div class="bg-dark px-3 text-center h-100 project">
+              <div class="d-flex h-100">
+                <div class="project-text w-100 my-auto text-center text-lg-right">
+                  <h4 class="text-white">Upgrading your hardware</h4>
+                  <p class="mb-0 text-white-50">Extend your computer's lifespan by upgrading your hardware. <a href="hardware.html">Read on and find out more</a></p>
+                  <hr class="d-none d-lg-block mb-0 mr-0">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+		<!--</section
+					</div>
+
+					<div class="footerContent">
+
+					</div>
+					</div>	>-->
+
+	</main>
+	<footer class="clearfix">
+		<p>Soh Shi Yong portfolio v2. SP DISM 1A01. &copy;2019</p>
+	</footer>
+
+	<script>
+		findHighestZIndex("caption");
+		
+	</script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+/*This is the default css and thus will be in every stylesheet*/
+/*verfied @ 9.10pm 1/6/2019*/
+@import url("index.css");
+
+.parallax {
+  background-image: url("../images/20190118_161502.jpg");
+}
+
+h6 {
+  font-size: 300%;
+  margin: 0 70%;
+  width: 30%;
+  text-align: center;
+}
+
+/*This is to ensure that the form will always have a spacing in
+between, it will also set the textarea*/
+form {
+  margin: 10% 40%;
+  width: auto;
+}
+
+/*This will apply the styles inside all the child of the form tag*/
+form>* {
+  margin: 5% auto;
+  height: 5em;
+  width: 70em;
+  display: block;
+  border: 3px solid #555;
+}
+
+/*This will set the size of the textarea*/
+form textarea {
+  width: 70em;
+  height: 200%;
+  word-spacing: inherit;
+}
+/*
+::placeholder {
+  padding: 1%;
+}*/
+
+@media (max-width:900px) {
+  form {
+    margin: 10% 40%;
+    width: 20%;
+  }
+
+  /*This will apply the styles inside all the child of the form tag*/
+  form>* {
+    margin: 5% -65%;
+    height: 5em;
+    width: 300%;
+    display: block;
+    border: 3px solid #555;
+  }
+}

@@ -1,0 +1,121 @@
+/*This is a default stylesheet and thus will be applied to all stylesheets*/
+/*verfied @ 9.11pm 1/6/2019*/
+@import url("index.css");
+@keyframes popup{
+	0% {background-color:#ffffff; /*left:0px;*/ top:0px; /*height:0%;*/ opacity:0;}
+	 100%  {background-color:#eaeaeaea; /*left:200px;*/ top:200px;/*height:100%;*/ opacity:1;}
+}
+
+.parallax{
+	background-image: url("../images/DSC_0010.jpg");
+
+}
+/*This is to ensure that the size of the image is always the proprtionate*/
+.certificates > img{
+	width:100%;
+	height: 100%;
+}
+/*This will hide all the contents in the class by default*/
+.hidden{
+
+	font-size:2em;
+	/*padding:200px;*/
+	margin:200px;
+	z-index:1;
+	display:inline;
+	overflow: auto;
+}
+
+.row {
+    max-width: 1200px;
+    margin: auto;
+		text-align: center;
+}
+/*This will determine the background-color and positioning of the
+the assigned contents*/
+.white{
+	margin:0% 2%;
+	/*padding:0 10%;*/
+	width:97%;
+	height:90%;
+	background-color:#eaeaea;
+	overflow:scroll;
+	transition:1s;
+	z-index:1;
+	display:none;
+	position:absolute;
+	text-align:center;
+
+}
+
+/*This will set the styling of the contents in it*/
+.white p{
+	font-size:1em;
+	font-family:Montserrat;
+	color:black;
+}
+/*This will determine the positioning of the popup*/
+.inPopups{
+
+	transition:1s;
+	animation-name:popup;
+	animation-duration: 1s;
+	width: 100%;
+
+}
+/*This will determine the styling inside the certificates class image*/
+.inPopups .certificates > img{
+	height: 100%;
+	width: auto;
+}
+/*This will determine how big the font is*/
+.content-title{
+	font-size:1em;
+	width: 100%;
+}
+/*This sets all h1 tags color to red, also, it will modify its default stacking order*/
+h1{
+	color:red;
+	position:relative;
+	z-index:2;
+}
+/*This will determine the position inside the items, it will also determine the
+size and align all text*/
+.items{
+	display:inline-block;
+	margin:5% 5%;
+	position:relative;
+	width: 20%;
+	text-align: center;
+
+}
+/*.items :active{
+	transition: 0.025s;
+	transform: rotate(-180deg);
+}*/
+/*This will ensure that all colors will be using this color, #fed136*/
+.text-primary{
+	background-color:#fed136 !important;
+}
+/*This will ensure that all portfolio class children will have its font set to black*/
+.portfolio-caption > * {
+	color:#000;
+}
+/*
+Anything below this line is for mobile
+---------------------------------------------------------------------------------
+*/
+
+@media (max-width:900px) {
+	.certificate{
+		display: block;
+		width: 100%;
+
+	}
+	/*This will set its postioning in mobile view*/
+	.items{
+		display: block;
+		width:60%;
+		margin:auto;
+	}
+}

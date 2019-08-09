@@ -1,0 +1,57 @@
+@import url("index.css");
+/*verfied @ 9.10pm 1/6/2019*/
+.hidden{
+	
+	font-size:2em;
+	color:red;
+	padding:200px;
+	margin:200px;
+	z-index:1;
+	
+}
+
+.white{
+	margin:0% -25%;
+	/*padding:0 10%;*/
+	width:97%;
+	height:90%;
+	background-color:#eaeaea;
+	overflow:scroll;
+	transition:1s;
+	z-index:1;
+	display:none;
+	position:absolute;
+	text-align:center;
+	
+}
+
+.white p{
+	font-size:1em;
+	font-family:Montserrat;
+}
+
+.inPopups{
+	margin:0 auto;
+	transition:1s;
+	animation-name:popup;
+	animation-duration: 1s;
+
+}
+.content-title{
+	font-size:1em;
+}
+
+h1{
+	color:red;
+	position:relative;
+	z-index:2;
+}
+
+.items{
+	display:inline-table;
+	margin:5% 5%;
+	position:relative;
+	width: 20%;
+	
+}
+

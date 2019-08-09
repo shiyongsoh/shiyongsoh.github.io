@@ -24,14 +24,18 @@ function popup(name){
 	event.preventDefault();
 	var contents = document.getElementById(name);
 	var hide = document.getElementsByClassName('hidden');
+	var main = document.getElementById('main');
+	for(var i = 0; i<main.length; i++){
+		console.log(main[i]);
+	}
 	var mode = 0;
-	if(contents.style.display === "flex"){
+	if(contents.style.display === "block"){
 	contents.style.display = "none";
-	hide.style.display = "none";
+	main.style.opacity = "1";
 	}
 	else{
-		contents.style.display = "flex";
-		hide.style.display = "flex";
+		contents.style.display = "block";
+		main.style.opacity = "0.5";
 	}
 	//alert(name);
 }

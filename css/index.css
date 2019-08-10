@@ -154,6 +154,7 @@ portfolio #portfolio-flters {
 	position:fixed;
 	display:block;
 	width:100%;
+	height:100%;
 	
 }
 .caption{
@@ -167,12 +168,12 @@ portfolio #portfolio-flters {
 	background-size:cover;
 }
 .slide{
-		position:relative;
+		position:absolute;
 		width:100%;
-		height:50%;
+		height:auto;
 		display:none;
 		background-color:blue;
-		
+		margin:auto;
 		margin:-20% -1%;
 	}
 @keyframes hide {

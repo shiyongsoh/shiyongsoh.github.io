@@ -4,10 +4,15 @@
 .parallax{
 	background-image: url("../images/DSC_0010.jpg");
 }
+.modal-body{
+	overflow:auto;
+}
 .modal-body img{
 	width:50%;
-	
 }
 .modal-content{
+	overflow:auto;
+}
+.modal{
 	overflow:auto;
 }

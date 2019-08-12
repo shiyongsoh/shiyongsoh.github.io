@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<!--verfied at 8:46am, 1/6/2019-->
+<html lang="en">
+
+<head>
+	<meta name="description" content="Overview of the webpage">
+	<meta name="author" content="Soh Shi Yong">
+	<meta name="format-detection" content="telephone=no">
+	<meta charset="utf-8">
+	<link rel="icon" type="image/png" href="images/yong.png">
+	<link rel="stylesheet" href="css/projects.css">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+	<link rel="stylesheet" href="bootstrap/css/bootstrap-reboot.min.css">
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="bootstrap/css/bootstrap-grid.min.css">
+	
+	<link rel="stylesheet" href="css/achievements.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="js/navbar.js"></script>
+	<script src="js/slideshow.js"></script>
+	<script src="index.js"></script>
+	<title>projects</title>
+</head>
+
+<body>
+
+<header>
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+		<a id="daynight" class="nightmode nightfont btn btn-primary Nbutton">Night Mode</a>		  <div class="container">
+			<a class="navbar-brand js-scroll-trigger" href="#page-top"></a>
+			<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+			  Menu
+			  <i class="fas fa-bars"></i>
+			</button>
+			
+			<div class="collapse navbar-collapse" id="navbarResponsive">
+			  <ul class="navbar-nav ml-auto">
+			   <li class="nav-item">
+				  <a class="nav-link" href="index.html">Home</a>
+				</li>
+				<li class="nav-item">
+				  <a class="nav-link" href="achievements.html">Achievements</a>
+				</li>
+				<li class="nav-item">
+				  <a class="nav-link" href="Projects.html">Projects</a>
+				</li>
+				<li class="nav-item">
+				  <a class="nav-link" href="contact.html">Contact</a>
+				</li>
+				 <li class="nav-item">
+				  <a class="nav-link" href="about.html">About</a>
+				</li>
+			  </ul>
+			</div>
+			
+		  </div>
+		</nav>
+	</header>
+	<!--set header image-->
+
+	<main>
+		<!--<h3 class="headline" id="next">My Projects</h3>
+		<section class="parallax container-fluid">
+			<div class="container align-items-center">
+				<div class="">
+				  <h1 class="mx-auto my-0 text-uppercase text-primary">projects</h1>
+				  <h3 class="text-white-50 mx-auto mt-2 mb-5">A few posters and counting</h3>
+				  <a href="#next" class="btn btn-primary js-scroll-trigger">This is my story</a>
+				</div>
+			</div>
+
+		</section>-->
+		<section class="container-fluid">
+			
+			<div class="goBehind">
+				<img class="slide show" src="images/20190118_161509.jpg">
+				<img class="slide remove" src="images/DSC_0012.jpg">
+				<img class="slide remove" src="images/IMG_1833.jpg">
+				<img class="slide remove" src="images/DSC_0010.jpg">
+				<img class="slide remove" src="images/_MG_3432.jpg">
+			</div>
+			<div class="container align-items-center caption">
+				  <h1 class="mx-auto my-0 text-uppercase webtitle">Projects</h1>
+				  <h3 class="text-white-50 mx-auto mt-2 mb-5">What I do when I am free</h3>
+				  <a href="#next" class="btn btn-primary Nbutton">Look down</a>
+				  
+			</div>
+			<div class="thumbnails d-block">
+				<img class="preview" onclick="slideshow(0)" src="images/20190118_161509.jpg">
+				<img class="preview" onclick="slideshow(1)" src="images/DSC_0012.jpg">
+				<img class="preview" onclick="slideshow(2)" src="images/IMG_1833.jpg">
+				<img class="preview" onclick="slideshow(3)" src="images/DSC_0010.jpg">
+				<img class="preview" onclick="slideshow(4)" src="images/_MG_3432.jpg">
+				<button onclick="slideshow()">next</button>
+			</div>
+		</section>
+		
+		<article class="container-fluid bg-light" id="next">
+		<h3 class="section-subheading text-primary text-uppercase pt-5 text-center this">Projects</h3>
+			<section class="row justify-content-lg-center py-5">
+				
+				<!--copy from here-->
+				<div class="col-lg-3 mr-5">
+					<a class="portfolio-link" data-toggle="modal" href="#cny">
+						<img class="img-fluid" src="images/cny2-01.svg" alt="2018 CDC & CCC ITE Schloarship">
+						<div class="portfolio-caption">
+							<h4 class="service-heading">CNY</h4>
+							<p class="text-muted">This poster is meant to bring residnece in the community. Click on to find out
+									more<i class="fas fa-arrow-right"></i></p>
+						</div>
+					</a>
+				</div>
+
+				<!--to here-->
+				<!--copy from here-->
+				<div class="col-lg-3 mr-5">
+					<a class="portfolio-link" data-toggle="modal" href="#elderlybreakfast">
+						<img class="img-fluid" src="images/elderlybreakfast.svg" alt="Director List 2018">
+						<div class="portfolio-caption">
+							<h4 class="service-heading">Elderly Breakfast</h4>
+							<p class="text-muted">This poster is meant to bring elderly together for a morning breakfast meal. Click on to find out more<i class="fas fa-arrow-right"></i></p>
+						</div>
+					</a>
+				</div>
+				<!--to here-->
+				<!--copy from here-->
+				<div class="col-lg-3 mr-5">
+					<a class="portfolio-link" data-toggle="modal" href="#eartha2017">
+						<img class="img-fluid" src="images/Backdrop_1920x1080(4trial)copy.svg" alt="Director List 2018">
+						<div class="portfolio-caption">
+							<h4 class="service-heading">Eartha 2017</h4>
+							<p class="text-muted">Find out
+								more <i class="fas fa-arrow-right"></i></p>
+						</div>
+					</a>
+				</div>
+				<!--to here-->
+			</section>
+		</article>
+		
+
+	</main>
+	<!--end of link-->
+	<footer class="container-fluid bg-light">
+		<p>Soh Shi Yong portfolio v2. SP DISM 1A01. &copy;2019</p>
+	</footer>
+
+
+
+
+
+
+
+
+		 <!--copy from here-->
+  <section class="portfolio-modal modal fade" id="elderlybreakfast">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="container">
+		  <div class="row">
+              <div class="col-lg-8 mx-auto">
+                <div class="modal-body">
+                
+                  <h2 class="text-uppercase">Breakfast with Love</h2>
+                  <p class="item-intro text-muted">This projects was done with Jurong Spring RC Zone A. To have a new year celebration and to bond, and know each other,and know what is happening in our community.</p>
+                  <img class="img-fluid" src="images/elderlybreakfast.svg" alt="Elderly breakfast poster">
+                </div>
+              </div>
+            </div>
+		 
+				
+             <button class="btn btn-primary" data-dismiss="modal" type="button">
+                    <i class="fa fa-times"></i>
+                    Close Project</button>
+          </div>
+        </div>
+      </div>
+	  </section>
+	  <!--to here-->
+<!--copy from here-->
+  <section class="portfolio-modal modal fade" id="cny">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="container">
+		  <div class="row">
+              <div class="col-lg-8 mx-auto">
+                <div class="modal-body">
+                
+                  <h2 class="text-uppercase">Chinese New Year</h2>
+                  <p class="item-intro text-muted">This projects was done with Jurong Spring RC Zone A. To have a new year celebration and to bond, and know each other,and know what is happening in our community.</p>
+                  <img class="img-fluid" src="images/cny2-01.svg" alt="Elderly breakfast poster">
+                </div>
+              </div>
+            </div>
+		 
+				
+             <button class="btn btn-primary" data-dismiss="modal" type="button">
+                    <i class="fa fa-times"></i>
+                    Close Project</button>
+          </div>
+        </div>
+      </div>
+	  </section>
+	  <!--to here-->
+
+
+	  <!--copy from here-->
+  <section class="portfolio-modal modal fade" id="eartha2017">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="container">
+		  <div class="row">
+              <div class="col-lg-8 mx-auto">
+                <div class="modal-body">
+                
+                  <h2 class="text-uppercase">eartha2017</h2>
+                 
+                  <img class="img-fluid" src="images/Backdrop_1920x1080(4trial)copy.svg" alt="Elderly breakfast poster">
+				   <p class="item-intro text-muted">Eartha 2017 is an event organise by youth to bring awareness about earth hour. During these event
+						also
+						showcases about how we can help save the enviroment.</p>
+                </div>
+              </div>
+            </div>
+		 
+				
+             <button class="btn btn-primary" data-dismiss="modal" type="button">
+                    <i class="fa fa-times"></i>
+                    Close Project</button>
+          </div>
+        </div>
+      </div>
+	  </section>
+	  <!--to here-->
+		<!--This consist of pictures and captions-->
+		
+		<!--This seperate the first section from the second selection-->
+	
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<script>
+	slideshow();
+		findHighestZIndex(" white");
+	</script>
+</body>
+
+</html>

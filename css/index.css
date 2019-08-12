@@ -23,97 +23,16 @@ body{
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
-#mainNav .navbar-brand {
-  font-weight: 800;
-  color: #343a40;
-}
 
-#mainNav .navbar-toggler {
-  font-size: 12px;
-  font-weight: 800;
-  padding: 13px;
-  text-transform: uppercase;
-  color: #343a40;
-}
-
-#mainNav .navbar-nav > li.nav-item > a {
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-}
-
-@media only screen and (min-width: 992px) {
-  #mainNav {
-    border-bottom: 1px solid transparent;
-    background: transparent;
-  }
-  #mainNav .navbar-brand {
-    padding: 10px 20px;
-    color: #fff;
-  }
-  #mainNav .navbar-brand:focus, #mainNav .navbar-brand:hover {
-    color: rgba(255, 255, 255, 0.8);
-  }
-  #mainNav .navbar-nav > li.nav-item > a {
-    padding: 10px 20px;
-    color: #fff;
-  }
-  #mainNav .navbar-nav > li.nav-item > a:focus, #mainNav .navbar-nav > li.nav-item > a:hover {
-    color: rgba(255, 255, 255, 0.8);
-  }
-}
-@media only screen and (min-width: 992px) {
-  #mainNav {
-	 
-    -webkit-transition: background-color 0.2s;
-    -moz-transition: background-color 0.2s;
-    transition: background-color 0.2s;
-    /* Force Hardware Acceleration in WebKit */
-    -webkit-transform: translate3d(0, 0, 0);
-    -moz-transform: translate3d(0, 0, 0);
-    -ms-transform: translate3d(0, 0, 0);
-    -o-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-    -webkit-backface-visibility: hidden;
-  }
-  #mainNav.is-fixed {
-    /* when the user scrolls down, we hide the header right above the viewport */
-    position: fixed;
-    top: -67px;
-    -webkit-transition: -webkit-transform 0.2s;
-    -moz-transition: -moz-transform 0.2s;
-    transition: transform 0.2s;
-    border-bottom: 1px solid white;
-    background-color: rgba(255, 255, 255, 0.9);
-  }
-  #mainNav.is-fixed .navbar-brand {
-    color: #212529;
-  }
-  #mainNav.is-fixed .navbar-brand:focus, #mainNav.is-fixed .navbar-brand:hover {
-    color: #0085A1;
-  }
-  #mainNav.is-fixed .navbar-nav > li.nav-item > a {
-    color: #212529;
-  }
-  #mainNav.is-fixed .navbar-nav > li.nav-item > a:focus, #mainNav.is-fixed .navbar-nav > li.nav-item > a:hover {
-    color: #0085A1;
-  }
-  #mainNav.is-visible {
-    /* if the user changes the scrolling direction, we show the header */
-    -webkit-transform: translate3d(0, 100%, 0);
-    -moz-transform: translate3d(0, 100%, 0);
-    -ms-transform: translate3d(0, 100%, 0);
-    -o-transform: translate3d(0, 100%, 0);
-    transform: translate3d(0, 100%, 0);
-  }
-}
 
 /*start portfolio*/
 .greeter{
 	margin-left:-1%;
+	//margin-bottom:100%;
+	padding:auto;
+	min-height: 35rem;
 }
-portfolio #portfolio-flters {
+/* portfolio #portfolio-flters {
     padding: 0;
     margin: 5px 0 35px 0;
     list-style: none;
@@ -132,7 +51,7 @@ portfolio #portfolio-flters {
     background: #fff;
     margin-bottom: 5px;
     transition: all 0.3s ease-in-out;
-}
+} */
 /*end portfolio*/
 
 
@@ -159,7 +78,7 @@ portfolio #portfolio-flters {
 }
 .caption{
 		margin-top:20%;
-		margin-bottom:30%;
+		margin-bottom:11%;
 		z-index:1;
 		
 }
@@ -168,13 +87,20 @@ portfolio #portfolio-flters {
 	background-size:cover;
 }
 .slide{
-		position:absolute;
+	/* 	position:absolute;
 		width:100%;
 		height:auto;
 		display:none;
 		background-color:blue;
-		margin:auto;
-		margin:-20% -1%;
+		margin:-20% 0% 0% -10%; */
+		position:absolute;
+		width:100%;
+		height:auto;
+		min-height: 35rem;
+		display:none;
+		background-color:blue;
+		/*margin:-20% auto;*/
+		margin:-20% -1%; 
 	}
 @keyframes hide {
   from {opacity: 1;}
@@ -217,6 +143,32 @@ portfolio #portfolio-flters {
 	
 	
 }
-.animate{
-	
+.thumbnails{
+
+	margin-left:30%;
+	margin-bottom:2%;
+	width:70%;
+	height:auto;
+}
+.thumbnails img{
+	width:10%;
+	margin:1% auto;
+}
+.nav-link{
+	color:#fff !important;
+}
+.webtitle{
+	color:white;
+	font-weight:bold;
+}
+.websubtitle{
+	color:#63fffa;
+	border: 3px #fff;
+}
+.Nbutton{
+	background-color:#4ff9ff;
+	color:black;
+}
+.Nbutton:hover{
+	color:#fff !important;
 }

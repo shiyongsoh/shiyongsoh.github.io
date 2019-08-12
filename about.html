@@ -11,45 +11,44 @@
 	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="bootstrap/css/bootstrap-grid.min.css">
 	<link rel="stylesheet" href="bootstrap/css/bootstrap-reboot.min.css">
-	<link rel="stylesheet" href="css/achievements.css">
+	<link rel="stylesheet" href="css/about.css">
 	<link href="css/fontawesome-free/css/all.min.css" rel="stylesheet">
+	<link href="css/about.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-	<link href="css/grayscale.css" rel="stylesheet">
-    <link href="css/freelancer.css" rel="stylesheet">
-    <link href="css/extra.css" rel="stylesheet">
-<link href="css/agency.css" rel="stylesheet">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link href="css/freelancer.css" rel="stylesheet"> -->
+<!-- <link href="css/agency.css" rel="stylesheet">  -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script src="index.js"></script>
 	<title>About</title>
-	<script src="index.js"></script>
+	<script src="js/slideshow.js"></script>
 </head>
 
 <body>
 	<header>
-		<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-		 <a id="daynight" class="nav-link btn smaller">Night Mode</a>
-		  <div class="container">
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+		<a id="daynight" class="nightmode nightfont btn btn-primary Nbutton">Night Mode</a>		  <div class="container">
 			<a class="navbar-brand js-scroll-trigger" href="#page-top"></a>
 			<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
 			  Menu
 			  <i class="fas fa-bars"></i>
 			</button>
+			
 			<div class="collapse navbar-collapse" id="navbarResponsive">
 			  <ul class="navbar-nav ml-auto">
 			   <li class="nav-item">
-				  <a class="nav-link js-scroll-trigger" href="index.html">Home</a>
+				  <a class="nav-link" href="index.html">Home</a>
 				</li>
 				<li class="nav-item">
 				  <a class="nav-link" href="achievements.html">Achievements</a>
 				</li>
 				<li class="nav-item">
-				  <a class="nav-link js-scroll-trigger" href="Projects.html">Projects</a>
+				  <a class="nav-link" href="Projects.html">Projects</a>
 				</li>
 				<li class="nav-item">
-				  <a class="nav-link js-scroll-trigger" href="contact.html">Contact</a>
+				  <a class="nav-link" href="contact.html">Contact</a>
 				</li>
 				 <li class="nav-item">
-				  <a class="nav-link js-scroll-trigger" href="about.html">About</a>
+				  <a class="nav-link" href="about.html">About</a>
 				</li>
 			  </ul>
 			</div>
@@ -57,46 +56,61 @@
 		  </div>
 		</nav>
 	</header>
-	<main class="projects-section bg-light">
+	<main class="">
 
-<section class="parallax container-fluid">
-			<div class="container align-items-center">
-				<div class="">
-				  <h1 class="mx-auto my-0 text-uppercase text-primary">About Me</h1>
-				  <h3 class="text-white-50 mx-auto mt-2 mb-5">A few posters and counting</h3>
-				  <a href="#next" class="btn btn-primary js-scroll-trigger">This is my story</a>
-				</div>
+<section class="container-fluid">
+			
+			<div class="goBehind">
+				<img class="slide show" src="images/20190118_161509.jpg">
+				<img class="slide remove" src="images/DSC_0012.jpg">
+				<img class="slide remove" src="images/IMG_1833.jpg">
+				<img class="slide remove" src="images/DSC_0010.jpg">
+				<img class="slide remove" src="images/_MG_3432.jpg">
 			</div>
-
+			<div class="container align-items-center caption">
+				  <h1 class="mx-auto my-0 text-uppercase webtitle">Hi, I am Shi Yong</h1>
+				  <h3 class="mx-auto mt-2 mb-5 websubtitle">This is my story</h3>
+				  <a href="#next" class="btn btn-primary Nbutton">See more</a>
+				  
+			</div>
+			<div class="thumbnails d-block">
+				<img class="preview" onclick="slideshow(0)" src="images/20190118_161509.jpg">
+				<img class="preview" onclick="slideshow(1)" src="images/DSC_0012.jpg">
+				<img class="preview" onclick="slideshow(2)" src="images/IMG_1833.jpg">
+				<img class="preview" onclick="slideshow(3)" src="images/DSC_0010.jpg">
+				<img class="preview" onclick="slideshow(4)" src="images/_MG_3432.jpg">
+				<button onclick="slideshow()">next</button>
+			</div>
 		</section>
-		<section id="about">
-      <div class="container">
-        <div class="row">
+		<div id="next">
+      <div class="container-fluid bg-light">
+        <section class="row">
           <div class="col-lg-12 text-center">
             <h2 class="section-heading text-uppercase">About Me</h2>
-           <br>
-           <br>
-           <br>
+			
           </div>
-        </div>
-        <div class="row">
+        </section>
+        <article class="row">
           <div class="col-lg-12">
             <ul class="timeline">
               <li>
-                <div class="timeline-image">
-                  <img class="rounded-circle img-fluid" src="images/yong.jpg" alt="">
-                </div>
-                <div class="timeline-panel">
-                  <div class="timeline-heading">
-                    <h4>2000-Present</h4>
-                    <h4 class="subheading"></h4>
-                  </div>
-                  <div class="timeline-body">
-                    <p class="text-muted">My name is shi yong and that I have a interest with technologies.</p>
-                  </div>
-                </div>
+				<figure>
+					<div class="timeline-image">
+					  <img class="rounded-circle img-fluid" src="images/yong.jpg" alt="">
+					</div>
+					<figcaption class="timeline-panel">
+					  <div class="timeline-heading">
+						<h4>2000-Present</h4>
+						<h4 class="subheading"></h4>
+					  </div>
+					  <div class="timeline-body">
+						<p class="text-muted">My name is shi yong and that I have a interest with technologies.</p>
+					  </div>
+					</figcaption>
+				</figure>
               </li>
               <li class="timeline-inverted">
+			  
                 <div class="timeline-image">
                   <img class="rounded-circle img-fluid" src="images/B136061.JPG" alt="">
                 </div>
@@ -141,21 +155,23 @@
               
             </ul>
           </div>
-        </div>
+        </article>
       </div>
-    </section>
+    </div>
 
 
 		
 	</main>
-	
+	<footer class="container-fluid bg-light">
+				<p>Soh Shi Yong portfolio v2. SP DISM 1A01. &copy;2019</p>
+			</footer>
 <!-- Bootstrap core JavaScript -->
     <script src="js/jquery/jquery.min.js"></script>
     <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Plugin JavaScript -->
     <script src="js/jquery-easing/jquery.easing.min.js"></script>
-
+	<script>slideshow()</script>
     <!-- Custom scripts for this template -->
 
 

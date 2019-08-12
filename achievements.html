@@ -10,27 +10,28 @@
 	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 	<link href="css/fontawesome-free/css/all.min.css" rel="stylesheet">
 	<link rel="icon" type="image/png" href="images/yong.png">
-	<link href="vendor/animate.min.css" rel="stylesheet">
+	<!-- <link href="vendor/animate.min.css" rel="stylesheet"> -->
+	<link rel="stylesheet" href="bootstrap/css/bootstrap-reboot.min.css">
 	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="bootstrap/css/bootstrap-grid.min.css">
-	<link rel="stylesheet" href="bootstrap/css/bootstrap-reboot.min.css">
-	<link rel="stylesheet" href="vendor/owlcarousel/assets/owl.carousel.min.css">
+	<!-- <link rel="stylesheet" href="vendor/owlcarousel/assets/owl.carousel.min.css">
 	<link rel="stylesheet" href="ionicons/css/ionicons.min.css">
-	<link rel="stylesheet" href="vendor/animate.min.css">
+	<link rel="stylesheet" href="vendor/animate.min.css"> -->
 	<link rel="stylesheet" href="css/achievements.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 	<script src="js/navbar.js"></script>
+	<script src="js/slideshow.js"></script>
 	<script src="index.js"></script>
-	<title>software</title>
+	<title>Achievements</title>
 </head>
 
 <body>
 	<!--this defines the main top protion of the webpage-->
 	
 	<header>
-		<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-		<a id="daynight" class="nightmode nightfont btn smaller">Night Mode</a>		  <div class="container">
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+		<a id="daynight" class="nightmode nightfont btn btn-primary Nbutton">Night Mode</a>		  <div class="container">
 			<a class="navbar-brand js-scroll-trigger" href="#page-top"></a>
 			<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
 			  Menu
@@ -40,19 +41,19 @@
 			<div class="collapse navbar-collapse" id="navbarResponsive">
 			  <ul class="navbar-nav ml-auto">
 			   <li class="nav-item">
-				  <a class="nav-link js-scroll-trigger" href="index.html">Home</a>
+				  <a class="nav-link" href="index.html">Home</a>
 				</li>
 				<li class="nav-item">
 				  <a class="nav-link" href="achievements.html">Achievements</a>
 				</li>
 				<li class="nav-item">
-				  <a class="nav-link js-scroll-trigger" href="Projects.html">Projects</a>
+				  <a class="nav-link" href="Projects.html">Projects</a>
 				</li>
 				<li class="nav-item">
-				  <a class="nav-link js-scroll-trigger" href="contact.html">Contact</a>
+				  <a class="nav-link" href="contact.html">Contact</a>
 				</li>
 				 <li class="nav-item">
-				  <a class="nav-link js-scroll-trigger" href="about.html">About</a>
+				  <a class="nav-link" href="about.html">About</a>
 				</li>
 			  </ul>
 			</div>
@@ -63,27 +64,41 @@
 
 	
 	<!--Align this title left-->
-	<main class="projects-section bg-light main-overlay" id="main">
+	<main class="projects-section main-overlay" id="main">
 	<!--slideshow start-->
 	
 		<!--slideshow end-->
 
-		<section class="parallax container-fluid">
-			<div class="container align-items-center">
-				<div class="">
-				  <h1 class="mx-auto my-0 text-uppercase text-primary">Achievements</h1>
-				  <h3 class="text-white-50 mx-auto mt-2 mb-5"></h3>
-				  <a href="#next" class="btn btn-primary js-scroll-trigger">This is my story</a>
-				</div>
+		<section class="container-fluid">
+			
+			<div class="goBehind">
+				<img class="slide show" src="images/20190118_161509.jpg">
+				<img class="slide remove" src="images/DSC_0012.jpg">
+				<img class="slide remove" src="images/IMG_1833.jpg">
+				<img class="slide remove" src="images/DSC_0010.jpg">
+				<img class="slide remove" src="images/_MG_3432.jpg">
 			</div>
-
+			<div class="container align-items-center caption">
+				  <h1 class="mx-auto my-0 text-uppercase webtitle">Achievements</h1>
+				  <h3 class="text-white-50 mx-auto mt-2 mb-5"></h3>
+				  <a href="#next" class="btn btn-primary Nbutton">6 out of 30 certificates,are on this website</a>
+				  
+			</div>
+			<div class="thumbnails d-block">
+				<img class="preview" onclick="slideshow(0)" src="images/20190118_161509.jpg">
+				<img class="preview" onclick="slideshow(1)" src="images/DSC_0012.jpg">
+				<img class="preview" onclick="slideshow(2)" src="images/IMG_1833.jpg">
+				<img class="preview" onclick="slideshow(3)" src="images/DSC_0010.jpg">
+				<img class="preview" onclick="slideshow(4)" src="images/_MG_3432.jpg">
+				<button onclick="slideshow()">next</button>
+			</div>
 		</section>
-		<article class="container" id="next">
-			<h3 class="section-subheading text-primary text-uppercase pt-5 text-center this">My Achievements</h3>
-			<section class="row justify-content-lg-center py-5">
+		<article class="container-fluid bg-light" id="next">
+			<h3 class="section-subheading text-primary text-uppercase pt-5 text-center webtitle">My Achievements</h3>
+			<section class="row justify-content-center">
 				
 				<!--copy from here-->
-				<figure class="col-lg-3 mr-5 certificate">
+				<figure class="col-lg-3 col-md-2 mr-5 certificate">
 					<a class="portfolio-link" onclick="popup('2018ITESchloarship')" href="#2018ITESchloarship">
 						<img class="img-fluid" src="images/recentCertificates/2018CDC&CCC_ITE_Schloarship.jpg" alt="2018 CDC & CCC ITE Schloarship">
 						<figcaption class="portfolio-caption">
@@ -94,7 +109,7 @@
 				</figure>
 				<!--to here-->
 				<!--copy from here-->
-				<figure class="col-lg-3 mr-5 certificate">
+				<figure class="col-lg-3 col-md-2 mr-5 certificate">
 					<a class="portfolio-link" onclick="popup('directorlist18')" href="#directorlist18">
 						<img class="img-fluid" src="images/recentCertificates/DirectorList2018.jpg" alt="Director List 2018">
 						<figcaption class="portfolio-caption">
@@ -105,7 +120,7 @@
 				</figure>
 				<!--to here-->
 				<!--copy from here-->
-				<figure class="col-lg-3 mr-5 certificate">
+				<figure class="col-lg-3 col-md-2 mr-5 certificate">
 					<a class="portfolio-link" onclick="popup('Eagles2017')" href="#Eagles2017">
 						<img class="img-fluid" src="images/recentCertificates/EaglesAward2017.jpg" alt="Director List 2018">
 						<figcaption class="portfolio-caption">
@@ -119,9 +134,9 @@
 				<!--to here-->
 			</section>
 			<!---------------------another row----------------------->
-			<section class="row justify-content-lg-center">
+			<section class="row justify-content-center">
 				<!--copy from here-->
-				<figure class="col-lg-3 mr-5 certificate">
+				<figure class="col-lg-3 col-md-2 mr-5 certificate">
 					<a class="portfolio-link" onClick="popup('acad2018')" href="#acad2018">
 						<img class="img-fluid" src="images/recentCertificates/EaglesAward2018.jpg" alt="2018 CDC & CCC ITE Schloarship">
 						<figcaption class="portfolio-caption">
@@ -133,7 +148,7 @@
 				</figure>
 				<!--to here-->
 				<!--copy from here-->
-				<figure class="col-lg-3 mr-5 certificate">
+				<figure class="col-lg-3 col-md-2 mr-5 certificate">
 					<a class="portfolio-link" onclick="popup('RC')" href="#RC">
 						<img class="carousel-inner" src="images/recentCertificates/RCCertificateOfAppointmentAsExecutiveMember.jpg" alt="Director List 2018">
 						<figcaption class="portfolio-caption">
@@ -144,7 +159,7 @@
 				</figure>
 				<!--to here-->
 				<!--copy from here-->
-				<figure class="col-lg-3 mr-5 certificate">
+				<figure class="col-lg-3 col-md-2 mr-5 certificate">
 					<a class="portfolio-link" onclick="popup('internship')" href="#internship">
 						<img class="carousel-inner" src="images/recentCertificates/NetDragon.jpg" alt="Director List 2018">
 						<figcaption class="portfolio-caption">
@@ -323,9 +338,9 @@
 		<!--Seperates one popup from another-->
 
 	<!--to here-->
-	<footer class=" align-middle">
-		<p>Soh Shi Yong portfolio v2. SP DISM 1A01. &copy;2019</p>
-	</footer>
+	<footer class="d-flex justify-content-center bg-light">
+			<p>Soh Shi Yong portfolio v2. SP DISM 1A01. &copy;2019</p>
+		</footer>
 	<!-- Bootstrap core JavaScript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
@@ -334,6 +349,7 @@
 <script src="scripts/superfish/superfish.min.js"></script> -->
 
 	<script>
+	slideshow();
 	/*$('.masthead-left').animate(
 	{backgroundPositionY+="200px"},2000);*/
 	/*$(function(){

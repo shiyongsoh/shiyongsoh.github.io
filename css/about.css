@@ -1,11 +1,8 @@
 /*Index.css is the default css,
 thus it is imported to every css file, like this one*/
-/*verfied @ 9.12pm 1/6/2019*/
+/*verifed at 12.40pm, 4/8/2019*/
 @import url("index.css");
-.parallax{
-	background-image: url("../images/DSC_0058.jpg");
 
-}
 timeline {
   position: relative;
   padding: 0;

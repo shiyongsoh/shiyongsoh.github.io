@@ -1,9 +1,6 @@
+/*verifed at 12.44am 14/8/2019*/
 @import url('index.css');
 
-	
-.parallax{
-	background-image: url("../images/DSC_0010.jpg");
-}
 .modal-body{
 	overflow:auto;
 }

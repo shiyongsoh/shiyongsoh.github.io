@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!--verifed at 7.19pm, 1/6/2019-->
+<!--verifed at 12.19am, 14/8/2019-->
 <html lang="en">
 
 <head>
@@ -21,14 +21,14 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 	<script src="js/navbar.js"></script>
-	<script src="js/slideshow.js"></script>
+	<script src="js/slideshow.js"></script><!--Gives the webpage a slideshow-->
 	
 	<title>Achievements</title>
 </head>
 
 <body class="nightmode">
+
 	<!--this defines the main top protion of the webpage-->
-	
 	<header>
 		<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
 		 <div class="container">
@@ -64,7 +64,7 @@
 
 	
 	<!--Align this title left-->
-	<main class="projects-section main-overlay" id="main">
+	<main>
 	<!--slideshow start-->
 	
 		<!--slideshow end-->
@@ -72,32 +72,32 @@
 		<section class="container-fluid">
 			
 			<div class="goBehind">
-				<img class="slide show" src="images/20190118_161509.jpg">
-				<img class="slide remove" src="images/DSC_0012.jpg">
-				<img class="slide remove" src="images/IMG_1833.jpg">
-				<img class="slide remove" src="images/DSC_0010.jpg">
-				<img class="slide remove" src="images/_MG_3432.jpg">
+				<img class="slide show" src="images/20190118_161509.jpg" alt="Scenery">
+				<img class="slide remove" src="images/DSC_0012.jpg" alt="City">
+				<img class="slide remove" src="images/IMG_1833.jpg" alt="Hope">
+				<img class="slide remove" src="images/DSC_0010.jpg" alt="Subway station">
+				<img class="slide remove" src="images/_MG_3432.jpg" alt="Sunrise">
 			</div>
 			<div class="container align-items-center caption">
 				  <h1 class="mx-auto my-0 text-uppercase webtitle">Thank you</h1>
-				  <h3 class="text-white-50 mx-auto mt-2 mb-5"></h3>
+				  <span class="text-white-50 mx-auto mt-2 mb-5"></span>
 				  <a href="index.html" class="btn btn-primary Nbutton">We will keep in touch</a>
 				  
 			</div>
 			<div class="thumbnails d-block">
-				<img class="preview" onclick="slideshow(0)" src="images/20190118_161509.jpg">
-				<img class="preview" onclick="slideshow(1)" src="images/DSC_0012.jpg">
-				<img class="preview" onclick="slideshow(2)" src="images/IMG_1833.jpg">
-				<img class="preview" onclick="slideshow(3)" src="images/DSC_0010.jpg">
-				<img class="preview" onclick="slideshow(4)" src="images/_MG_3432.jpg">
+				<img class="preview" onclick="slideshow(0)" src="images/20190118_161509.jpg" alt="Scenery">
+				<img class="preview" onclick="slideshow(1)" src="images/DSC_0012.jpg" alt="City">
+				<img class="preview" onclick="slideshow(2)" src="images/IMG_1833.jpg" alt="Hope">
+				<img class="preview" onclick="slideshow(3)" src="images/DSC_0010.jpg" alt="Subway station">
+				<img class="preview" onclick="slideshow(4)" src="images/_MG_3432.jpg" alt="Sunrise">
 				<button onclick="slideshow()">next</button>
 			</div>
 		</section>
 		<article class="content container-fluid bg-light" id="next">
 			<h3 class="section-subheading text-primary text-uppercase pt-5 text-center webtitle">Thank you</h3>
-			<section class="row justify-content-center">
+			<span class="row justify-content-center">
 				
-			</section>
+			</span>
 			<!--This consist of pictures and captions-->
 			
 		</article>
@@ -126,53 +126,7 @@
 <script src="index.js"></script>
 	<script>
 	slideshow();
-	/*$('.masthead-left').animate(
-	{backgroundPositionY+="200px"},2000);*/
-	/*$(function(){
-		$("#mastheadhome").fadeTo();
-	});
-	setTimeout(
-  function() 
-  {
-   $("#mastheadhome").fadeTo();
-  }, 5000);*/
-/*$(document).ready(function() {
-   var container = $('.projects-section');
-   var content = $('.modal-content');
-   var words = $('.text-muted');
-   var title = $('.service-heading');
-   var heading = $('.section-heading');
-   var contenttitle = $('.container > h2');
-      var contenth4 = $('.container > h4');
-   var contentparagraph = $('.container > p');
-   var contenth2 = $('.modal-body > h2');
-   var button = document.getElementById("daynight");
-   $('.nightmode').click(function() {
-	container.toggleClass('nightground');
-	content.toggleClass('nightground');
-	words.toggleClass('nightfont');
-	title.toggleClass('nightfont');
-	heading.toggleClass('nightfont');
-	contenttitle.toggleClass('nightfont');
-	contenth2.toggleClass('nightfont');
-	contenth4.toggleClass('nightfont');
-	contentparagraph.toggleClass('nightfont');
-
-		if($('#daynight').html()== 'Day Mode'){
-		button.innerHTML = 'Night Mode';
-		}
-		else{
-	button.innerHTML = 'Day Mode';
-	}
 	
-   });
-   });*/
-  /*
-  $('#nightmode').click(function() {
-  $('#projects-home').toggleClass('.background');
-	});
-	});
-	*/
 	</script>
 </body>
 

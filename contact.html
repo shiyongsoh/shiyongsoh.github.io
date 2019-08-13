@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!--verifed at 7.19pm, 1/6/2019-->
+<!--verifed at 12.27am, 14/8/2019-->
 <html lang="en">
 
 <head>
@@ -64,74 +64,74 @@
 
 	
 	<!--Align this title left-->
-	<main class="projects-section main-overlay" id="main">
-	<!--slideshow start-->
+	<main>
 	
-		<!--slideshow end-->
-
+		<!--slideshow start-->
 		<section class="container-fluid">
 			
 			<div class="goBehind">
-				<img class="slide show" src="images/20190118_161509.jpg">
-				<img class="slide remove" src="images/DSC_0012.jpg">
-				<img class="slide remove" src="images/IMG_1833.jpg">
-				<img class="slide remove" src="images/DSC_0010.jpg">
-				<img class="slide remove" src="images/_MG_3432.jpg">
+				<img class="slide show" src="images/20190118_161509.jpg" alt="Scenery">
+				<img class="slide remove" src="images/DSC_0012.jpg" alt="City">
+				<img class="slide remove" src="images/IMG_1833.jpg" alt="Hope">
+				<img class="slide remove" src="images/DSC_0010.jpg" alt="Subway station">
+				<img class="slide remove" src="images/_MG_3432.jpg" alt="Sunrise">
 			</div>
 			<div class="container align-items-center caption">
 				  <h1 class="mx-auto my-0 text-uppercase webtitle">Contact</h1>
-				  <h3 class="text-white-50 mx-auto mt-2 mb-5"></h3>
+				  <span class="text-white-50 mx-auto mt-2 mb-5"></span>
 				  <a href="#next" class="btn btn-primary Nbutton">Pester further</a>
 				  
 			</div>
 			<div class="thumbnails d-block">
-				<img class="preview" onclick="slideshow(0)" src="images/20190118_161509.jpg">
-				<img class="preview" onclick="slideshow(1)" src="images/DSC_0012.jpg">
-				<img class="preview" onclick="slideshow(2)" src="images/IMG_1833.jpg">
-				<img class="preview" onclick="slideshow(3)" src="images/DSC_0010.jpg">
-				<img class="preview" onclick="slideshow(4)" src="images/_MG_3432.jpg">
+				<img class="preview" onclick="slideshow(0)" src="images/20190118_161509.jpg" alt="Scenery">
+				<img class="preview" onclick="slideshow(1)" src="images/DSC_0012.jpg" alt="City">
+				<img class="preview" onclick="slideshow(2)" src="images/IMG_1833.jpg" alt="Hope">
+				<img class="preview" onclick="slideshow(3)" src="images/DSC_0010.jpg" alt="Subway station">
+				<img class="preview" onclick="slideshow(4)" src="images/_MG_3432.jpg" alt="Sunrise">
 				<button onclick="slideshow()">next</button>
 			</div>
 		</section>
-		<section class="d-block container-fluid justify-content-center bg-light" id="next">
-        <h2 class="text-center d-block text-uppercase text-secondary my-3">Contact Me</h2>
-       <hr class="mb-5">
-	   <div class="d-block justify-content-center bg-light">
-            <form id="contactForm" class="d-block w-50 justify-content-center mx-auto" method="post" onsubmit="validate()">
-              <div class="control-group">
-                <div class="form-group floating-label-form-group controls mb-0 pb-2">
-				<label for="name">Name:</label>
-                <input class="form-control" id="name" type="text" placeholder="Name">
-                
-                </div>
-              </div>
-              <div class="control-group">
-                <div class="form-group floating-label-form-group controls mb-0 pb-2">
-				<label for="email">Email</label>
-                <input class="form-control" id="email" type="email" placeholder="Email Address">
-                
-                </div>
-              </div>
-              <div class="control-group">
-                <div class="form-group controls mb-0 pb-2">
-                <label for="phone">Phone:</label> 
-                <input class="form-control" id="phone" type="tel" placeholder="Phone Number">
-                
-                </div>
-              </div>
-              <div class="control-group">
-                <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                 <label for="message">Message</label>
-                  <textarea class="form-control" id="message" rows="5" placeholder="Message"></textarea>
-                  <p class="help-block text-danger"></p>
-                </div>
-              </div>
-			  <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                <button type="submit" class="btn btn-primary btn-block py-4 my-5" id="sendMessageButton" >Send</button>
-			</div>
-            </form>
-			</div>
-			</section>
+		<!--slideshow end-->
+		<div class="d-block content container-fluid justify-content-center bg-light" id="next">
+        
+       <hr class="my-5">
+	   <h2 class="text-center d-block text-uppercase text-secondary">Contact Me</h2>
+		   
+				<form id="contactForm" class="d-block w-50 justify-content-center mx-auto" method="post" onsubmit="validate()">
+				  <div class="control-group">
+					<div class="form-group floating-label-form-group controls mb-0 pb-2">
+					<label for="name">Name:</label>
+					<input class="form-control" id="name" type="text" placeholder="Name">
+					
+					</div>
+				  </div>
+				  <div class="control-group">
+					<div class="form-group floating-label-form-group controls mb-0 pb-2">
+					<label for="email">Email</label>
+					<input class="form-control" id="email" type="email" placeholder="Email Address">
+					
+					</div>
+				  </div>
+				  <div class="control-group">
+					<div class="form-group controls mb-0 pb-2">
+					<label for="phone">Phone:</label> 
+					<input class="form-control" id="phone" type="tel" placeholder="Phone Number">
+					
+					</div>
+				  </div>
+				  <div class="control-group">
+					<div class="form-group floating-label-form-group controls mb-0 pb-2">
+					 <label for="message">Message</label>
+					  <textarea class="form-control" id="message" rows="5" placeholder="Optional"></textarea>
+					  <p class="help-block text-danger"></p>
+					</div>
+				  </div>
+				  <div class="form-group floating-label-form-group controls mb-0 pb-2">
+					<button type="submit" class="btn btn-primary btn-block py-4 my-5" id="sendMessageButton" >Send</button>
+				</div>
+				</form>
+			
+		</div>
 	</main>
 
 	<footer class="d-flex justify-content-center bg-light">

@@ -14,20 +14,17 @@
 	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="bootstrap/css/bootstrap-grid.min.css">
 	<link rel="stylesheet" href="bootstrap/css/bootstrap-reboot.min.css">
-	<!-- <link rel="stylesheet" href="vendor/owlcarousel/assets/owl.carousel.min.css">
-	<link rel="stylesheet" href="ionicons/css/ionicons.min.css">
-	<link rel="stylesheet" href="vendor/animate.min.css"> -->
-	<link rel="stylesheet" href="css/achievements.css">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="css/achievements.css"><!--achievements.css is used here as they have the same layout. Thus, only this stylesheet is used-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"><!--To ensure that it scales across all device resolution with the help of bootstrap-->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script><!--Call Jquery from the CDN-->
 	<script src="js/navbar.js"></script>
-	<script src="js/slideshow.js"></script>
-	<script src="index.js"></script>
+	<script src="js/slideshow.js"></script><!--Gives the webpage a slideshow-->
+	
 	<title>Projects</title>
 </head>
 
 <body>
-	<!--this defines the main top protion of the webpage-->
+	<!--Header defines the main top protion of the webpage, which consist of the Navbar-->
 	
 	<header>
 		<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
@@ -63,20 +60,19 @@
 	</header>
 
 	
-	<!--Align this title left-->
+	
 	<main class="projects-section main-overlay" id="main">
 	<!--slideshow start-->
 	
-		<!--slideshow end-->
-
+		
 		<section class="container-fluid">
 			
 			<div class="goBehind greeter">
-				<img class="slide show" src="images/20190118_161509.jpg">
-				<img class="slide remove" src="images/DSC_0012.jpg">
-				<img class="slide remove" src="images/IMG_1833.jpg">
-				<img class="slide remove" src="images/DSC_0010.jpg">
-				<img class="slide remove" src="images/_MG_3432.jpg">
+				<img class="slide show" src="images/20190118_161509.jpg" alt="Scenery">
+				<img class="slide remove" src="images/DSC_0012.jpg" alt="City">
+				<img class="slide remove" src="images/IMG_1833.jpg" alt="Hope">
+				<img class="slide remove" src="images/DSC_0010.jpg" alt="Subway station">
+				<img class="slide remove" src="images/_MG_3432.jpg" alt="Sunrise">
 			</div>
 			<div class="container align-items-center caption">
 				  <h1 class="mx-auto my-0 text-uppercase webtitle">Projects</h1>
@@ -85,67 +81,63 @@
 				  
 			</div>
 			<div class="thumbnails d-block">
-				<img class="preview" onclick="slideshow(0)" src="images/20190118_161509.jpg">
-				<img class="preview" onclick="slideshow(1)" src="images/DSC_0012.jpg">
-				<img class="preview" onclick="slideshow(2)" src="images/IMG_1833.jpg">
-				<img class="preview" onclick="slideshow(3)" src="images/DSC_0010.jpg">
-				<img class="preview" onclick="slideshow(4)" src="images/_MG_3432.jpg">
+				<img class="preview" onclick="slideshow(0)" src="images/20190118_161509.jpg" alt="Scenery">
+				<img class="preview" onclick="slideshow(1)" src="images/DSC_0012.jpg" alt="City">
+				<img class="preview" onclick="slideshow(2)" src="images/IMG_1833.jpg" alt="Hope">
+				<img class="preview" onclick="slideshow(3)" src="images/DSC_0010.jpg" alt="Subway station">
+				<img class="preview" onclick="slideshow(4)" src="images/_MG_3432.jpg" alt="Sunrise">
 				<button onclick="slideshow()">next</button>
 			</div>
 		</section>
-		<article class="container-fluid bg-light" id="next">
+		<!--slideshow end-->
+		<!--Class show will let an image to show at the frontpage with parallax effect
+			Hide will hide give the picture, giving the attribute of display none to the picture
+		-->
+		<article class="container-fluid bg-light" id="next"><!--ID next is use to link the button from the top of tbe webpage, scrolling the user down here-->
 			<h3 class="section-subheading text-primary text-uppercase pt-5 text-center webtitle">My Achievements</h3>
 			<section class="row justify-content-lg-center">
 				
-				<!--copy from here-->
-				<figure class="col-md-4 col-xl-3 mr-5 certificate">
-					<a class="portfolio-link" onclick="popup('cny')" href="#cny">
+				<!-- This gives the image a caption and a preview -->
+				<a class="col-md-4 col-xl-3 mr-5 certificate" onclick="popup('cny')" href="#cny">
+				<figure>
 						<img class="img-fluid" src="images/cny2-01.svg" alt="2018 CDC & CCC ITE Schloarship">
 						<figcaption class="portfolio-caption">
 							<h4 class="service-heading">2018 CDC & CCC ITE Schloarship</h4>
 							<p class="text-muted">This poster is meant to bring residnece in the community. Click on to find out
 									more <i class="fas fa-arrow-right"></i></p>
 						</figcaption>
-					</a>
 				</figure>
-				<!--to here-->
-				<!--copy from here-->
-				<figure class="col-md-4 col-xl-3 mr-5 certificate">
-					<a class="portfolio-link" onclick="popup('elderlybreakfast')" href="#elderlybreakfast">
+				</a>
+				<!--This seperates one image and caption from the other-->
+				<!--This gives the image a caption and a preview-->
+				<a class="col-md-4 col-xl-3 mr-5 certificate" onclick="popup('elderlybreakfast')" href="#elderlybreakfast">
+					<figure>
 						<img class="img-fluid" src="images/elderlybreakfast.svg" alt="Director List 2018">
 						<figcaption class="portfolio-caption">
 							<h4 class="service-heading">Director List 2018</h4>
 							<p class="text-muted">This poster is meant to bring elderly together for a morning breakfast meal. Click on to find out more <i class="fas fa-arrow-right"></i></p>
 						</figcaption>
-					</a>
-				</figure>
-				<!--to here-->
-				<!--copy from here-->
-				<figure class="col-md-4 col-xl-3 mr-5 certificate">
-					<a class="portfolio-link" onclick="popup('eartha2017')" href="#eartha2017">
+					</figure>
+				</a>
+				
+				<!--This seperates one image and caption from the other-->
+				<!--This gives the image a caption and a preview-->
+				<a class="col-md-4 col-xl-3 mr-5 certificate" onclick="popup('eartha2017')" href="#eartha2017">
+				<figure>
 						<img class="img-fluid" src="images/Backdrop_1920x1080(4trial)copy.svg" alt="Director List 2018">
 						<figcaption class="portfolio-caption">
 							<h4 class="service-heading">Eartha 2017</h4>
 							<p class="text-muted">This project was done in conjunction with Jurong Spring CC. Click on to find out more<i class="fas fa-arrow-right"></i></p>
 						</figcaption>
-					</a>
 				</figure>
-				<!--to here-->
+				</a>
+				<!--This seperates one image and caption from the other-->
 			</section>
-			<!---------------------another row----------------------->
 			
-			<!--This consist of pictures and captions-->
 			
 		</article>
 	</main>
-
-
-
-
-
-
-
-	<!--This html codes will hide from the user unless it it clicked on-->
+		<!--This html codes will hide from the user unless it it clicked on-->
 	
 		<!--Hides this photo away-->
 		 <section class="modal" id="cny" onClick="popup('cny')">
@@ -207,20 +199,19 @@
 
 				<div class="modal-content">
 					<div class="modal-header">
-						<div class="modal-header">
-							<h2 class="modal-title">eartha2017</h2>
-						</div>
+						<h2 class="modal-title">eartha2017</h2>
 					</div>
 
-				<span class="modal-body d-flex">
-					<img src="images/Backdrop_1920x1080(4trial)copy.svg" alt="NetDragon">
+				<div class="modal-body d-flex">
+					<img src="images/Backdrop_1920x1080(4trial)copy.svg" alt="Eartha 2017">
+				
 					<figcaption>
 						
 						<p>Eartha 2017 is an event organise by youth to bring awareness about earth hour. During these event also
 						showcases about how we can help save the enviroment.</p>
 						
 					</figcaption>
-				</span>
+				</div>
 				<span class="modal-footer">
 					<p class="Close">Click to close this popup</p>
 				</span>
@@ -229,7 +220,7 @@
 		</section>
 		<!--Seperates one popup from another-->
 
-	<!--to here-->
+	<!--This seperates one image and caption from the other-->
 	<footer class="d-flex justify-content-center bg-light">
 			<p>Soh Shi Yong portfolio v2. SP DISM 1A01. &copy;2019</p>
 		</footer>
@@ -239,64 +230,10 @@
 <!-- <script src="scripts/jquery-migrate.min.js"></script>
 <script src="scripts/superfish/hoverIntent.js"></script>
 <script src="scripts/superfish/superfish.min.js"></script> -->
-
+<script src="index.js"></script><!--Does miscancellanous stuff like display and hide popups-->
 	<script>
 	slideshow();
-	/*$('.masthead-left').animate(
-	{backgroundPositionY+="200px"},2000);*/
-	/*$(function(){
-		$("#mastheadhome").fadeTo();
-	});
-	setTimeout(
-  function() 
-  {
-   $("#mastheadhome").fadeTo();
-  }, 5000);*/
-$(document).ready(function() {
-   var container = $('.projects-section');
-   var content = $('.modal-content');
-   var words = $('.text-muted');
-   var title = $('.service-heading');
-   var heading = $('.section-heading');
-   var contenttitle = $('.container > h2');
-      var contenth4 = $('.container > h4');
-   var contentparagraph = $('.container > p');
-   var contenth2 = $('.modal-body > h2');
-   var button = document.getElementById("daynight");
-   $('.nightmode').click(function() {
-	container.toggleClass('nightground');
-	content.toggleClass('nightground');
-	words.toggleClass('nightfont');
-	title.toggleClass('nightfont');
-	heading.toggleClass('nightfont');
-	contenttitle.toggleClass('nightfont');
-	contenth2.toggleClass('nightfont');
-	contenth4.toggleClass('nightfont');
-	contentparagraph.toggleClass('nightfont');
-	
-	 
-	/*if($('#daynight').html('background-color', '#666')){
-		button.innerHTML = "Day Mode";
-		
-		}
-	else if($('#daynight').css('background-color', '#eee')){
-		button.innerHTML = "Night Mode";
-		}*/
-		if($('#daynight').html()== 'Day Mode'){
-		button.innerHTML = 'Night Mode';
-		}
-		else{
-	button.innerHTML = 'Day Mode';
-	}
-	
-   });
-   });
-  /*
-  $('#nightmode').click(function() {
-  $('#projects-home').toggleClass('.background');
-	});
-	});
-	*/
+
 	</script>
 </body>
 

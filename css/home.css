@@ -1,11 +1,13 @@
+/*verifed at 12.40am, 4/8/2019*/
 @import url("index.css");
-.parallax{
-	//background-image: url("../images/_MG_3432.jpg");
-}
+
 hr{
 	background-color:#fff;
 }
 .table-borderless td,
 .table-borderless th {
     border: 0;
+}
+.container-fluid td{
+	width:50%;
 }

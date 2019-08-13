@@ -27,7 +27,7 @@
 </head>
 
 <body>
-	<!--this defines the main top protion of the webpage-->
+	<!--Header defines the main top protion of the webpage, which consist of the Navbar-->
 	
 	<header>
 		<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
@@ -65,18 +65,18 @@
 	
 	<!--Align this title left-->
 	<main class="projects-section main-overlay" id="main">
-	<!--slideshow start-->
 	
-		<!--slideshow end-->
-
+	
+		
+<!--slideshow start-->
 		<section class="container-fluid">
 			
 			<div class="goBehind">
-				<img class="slide show" src="images/20190118_161509.jpg">
-				<img class="slide remove" src="images/DSC_0012.jpg">
-				<img class="slide remove" src="images/IMG_1833.jpg">
-				<img class="slide remove" src="images/DSC_0010.jpg">
-				<img class="slide remove" src="images/_MG_3432.jpg">
+				<img class="slide show" src="images/20190118_161509.jpg" alt="Scenery">
+				<img class="slide remove" src="images/DSC_0012.jpg" alt="City">
+				<img class="slide remove" src="images/IMG_1833.jpg" alt="Hope">
+				<img class="slide remove" src="images/DSC_0010.jpg" alt="Subway station">
+				<img class="slide remove" src="images/_MG_3432.jpg" alt="Sunrise">
 			</div>
 			<div class="container align-items-center caption">
 				  <h1 class="mx-auto my-0 text-uppercase webtitle">Achievements</h1>
@@ -85,43 +85,49 @@
 				  
 			</div>
 			<div class="thumbnails d-block">
-				<img class="preview" onclick="slideshow(0)" src="images/20190118_161509.jpg">
-				<img class="preview" onclick="slideshow(1)" src="images/DSC_0012.jpg">
-				<img class="preview" onclick="slideshow(2)" src="images/IMG_1833.jpg">
-				<img class="preview" onclick="slideshow(3)" src="images/DSC_0010.jpg">
-				<img class="preview" onclick="slideshow(4)" src="images/_MG_3432.jpg">
+				<img class="preview" onclick="slideshow(0)" src="images/20190118_161509.jpg" alt="Scenery">
+				<img class="preview" onclick="slideshow(1)" src="images/DSC_0012.jpg" alt="City">
+				<img class="preview" onclick="slideshow(2)" src="images/IMG_1833.jpg" alt="Hope">
+				<img class="preview" onclick="slideshow(3)" src="images/DSC_0010.jpg" alt="Subway station">
+				<img class="preview" onclick="slideshow(4)" src="images/_MG_3432.jpg" alt="Sunrise">
 				<button onclick="slideshow()">next</button>
 			</div>
 		</section>
+		<!--slideshow end-->
 		<article class="content container-fluid bg-light" id="next">
 			<h3 class="section-subheading text-primary text-uppercase pt-5 text-center webtitle">My Achievements</h3>
 			<section class="row justify-content-center">
 				
-				<!--copy from here-->
-				<figure class="col-md-4 col-xl-3 mr-5 certificate">
-					<a class="portfolio-link" onclick="popup('2018ITESchloarship')" href="#2018ITESchloarship">
+				<!--This gives the image a caption and a preview-->
+				
+					<a class="col-md-4 col-xl-3 mr-5 certificate" onclick="popup('2018ITESchloarship')" href="#2018ITESchloarship">
+						<figure>
 						<img class="img-fluid" src="images/recentCertificates/2018CDC&CCC_ITE_Schloarship.jpg" alt="2018 CDC & CCC ITE Schloarship">
 						<figcaption class="portfolio-caption">
 							<h4 class="service-heading">2018 CDC & CCC ITE Schloarship</h4>
 							<p class="text-muted">This certificate is awarded during ITE. Find out more <i class="fas fa-arrow-right"></i></p>
 						</figcaption>
+						</figure>
 					</a>
-				</figure>
-				<!--to here-->
-				<!--copy from here-->
-				<figure class="col-md-4 col-xl-3 mr-5 certificate">
-					<a class="portfolio-link" onclick="popup('directorlist18')" href="#directorlist18">
+				
+				<!--This seperates one image and caption from the other-->
+				<!--This gives the image a caption and a preview-->
+				
+					<a class="col-md-4 col-xl-3 mr-5 certificate" onclick="popup('directorlist18')" href="#directorlist18">
+						<figure>
 						<img class="img-fluid" src="images/recentCertificates/DirectorList2018.jpg" alt="Director List 2018">
 						<figcaption class="portfolio-caption">
 							<h4 class="service-heading">Director List 2018</h4>
 							<p class="text-muted">This certificate was awarded during ITE, for good progress .Click me to find out more <i class="fas fa-arrow-right"></i></p>
 						</figcaption>
+						</figure>
 					</a>
-				</figure>
-				<!--to here-->
-				<!--copy from here-->
-				<figure class="col-md-4 col-xl-3 mr-5 certificate">
-					<a class="portfolio-link" onclick="popup('Eagles2017')" href="#Eagles2017">
+				
+				<!--This seperates one image and caption from the other-->
+				<!--This gives the image a caption and a preview-->
+				
+					<a class="col-md-4 col-xl-3 mr-5 certificate" onclick="popup('Eagles2017')" href="#Eagles2017">
+					<figure class="">
 						<img class="img-fluid" src="images/recentCertificates/EaglesAward2017.jpg" alt="Director List 2018">
 						<figcaption class="portfolio-caption">
 							<h4 class="service-heading">Eagles award 2017</h4>
@@ -129,44 +135,49 @@
 								role. Find out
 								more <i class="fas fa-arrow-right"></i></p>
 						</figcaption>
+					</figure>
 					</a>
-				</figure>
-				<!--to here-->
-			
-				<figure class="col-md-4 col-xl-3 mr-5 certificate">
-					<a class="portfolio-link" onClick="popup('acad2018')" href="#acad2018">
+				
+				<!--This seperates one image and caption from the other-->
+			<a class="col-md-4 col-xl-3 mr-5 certificate" onClick="popup('acad2018')" href="#acad2018">
+				<figure>
+					
 						<img class="img-fluid" src="images/recentCertificates/EaglesAward2018.jpg" alt="2018 CDC & CCC ITE Schloarship">
 						<figcaption class="portfolio-caption">
 							<h4 class="service-heading">Edusave Certificate of academeic achievements</h4>
 							<p class="text-muted">This award is awarded in 2018, for good academeic progress. Click me
 								to find out more<i class="fas fa-arrow-right"></i></p>
 						</figcaption>
+						</figure>
 					</a>
-				</figure>
-				<!--to here-->
-				<!--copy from here-->
-				<figure class="col-md-4 col-xl-3 mr-5 certificate">
-					<a class="portfolio-link" onclick="popup('RC')" href="#RC">
+				<!--This seperates one image and caption from the other-->
+				<!--This gives the image a caption and a preview-->
+				
+					<a class="col-md-4 col-xl-3 mr-5 certificate" onclick="popup('RC')" href="#RC">
+					<figure>
 						<img class="carousel-inner" src="images/recentCertificates/RCCertificateOfAppointmentAsExecutiveMember.jpg" alt="Director List 2018">
 						<figcaption class="portfolio-caption">
 							<h4 class="service-heading">RC certificate of appointment</h4>
 							<p class="text-muted">This certificate was awarded during ITE, for good progress .Click me to find out more <i class="fas fa-arrow-right"></i></p>
 						</figcaption>
+					</figure>
 					</a>
-				</figure>
-				<!--to here-->
-				<!--copy from here-->
-				<figure class="col-md-4 col-xl-3 mr-5 certificate">
-					<a class="portfolio-link" onclick="popup('internship')" href="#internship">
+				
+				<!--This seperates one image and caption from the other-->
+				<!--This gives the image a caption and a preview-->
+				
+					<a class="col-md-4 col-xl-3 mr-5 certificate" onclick="popup('internship')" href="#internship">
+					<figure>
 						<img class="carousel-inner" src="images/recentCertificates/NetDragon.jpg" alt="Director List 2018">
 						<figcaption class="portfolio-caption">
 							<h4 class="service-heading">NetDragon</h4>
 							<p class="text-muted">Overseas Internship in Changle, Fuzhou, China. Click me to find out
 								more<i class="fas fa-arrow-right"></i></p>
 						</figcaption>
+					</figure>
 					</a>
-				</figure>
-				<!--to here-->
+			
+				<!--This seperates one image and caption from the other-->
 			</section>
 			<!--This consist of pictures and captions-->
 			
@@ -334,7 +345,7 @@
 		</section>
 		<!--Seperates one popup from another-->
 
-	<!--to here-->
+	<!--This seperates one image and caption from the other-->
 	<footer class="d-flex justify-content-center bg-light">
 			<p>Soh Shi Yong portfolio v2. SP DISM 1A01. &copy;2019</p>
 		</footer>

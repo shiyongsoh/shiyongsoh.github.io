@@ -91,7 +91,7 @@ function validate(){
 		console.log(allOK+validEmail+checked)
 	
 	if(allOK){
-		window.location.href = "https://www.example.com";
+		window.location.href = "thankyou.html";
 	}
 }
 

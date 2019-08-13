@@ -1,8 +1,7 @@
+/*verifed at 12.44am 14/8/2019*/
 /*This is the default css and thus will be in every stylesheet*/
 @import url("index.css");
-.parallax{
-	background-image: url("../images/20190118_161502.jpg");
-}
+
 .table{
 	width:225%;
 }

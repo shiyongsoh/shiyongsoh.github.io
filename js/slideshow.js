@@ -57,7 +57,7 @@ setInterval(slideshow, 3000); */
 		}
 		
 		function thumbnails(slideNumber, show){
-			console.log("preview " + slideNumber+ "\nshow "+show)
+			//console.log("preview " + slideNumber+ "\nshow "+show)
 			switch(show){
 				case 0:
 				

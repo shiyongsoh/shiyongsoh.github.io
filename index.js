@@ -41,7 +41,11 @@ function popup(name){
 }
 function nightmode(){
 	console.log("Nightmode is working")
+	var article = document.getElementsByClassName('content');
 	document.body.classList.toggle("nightmode");
+	for(var i = 0; i < article.length; i++){
+	article[i].classList.toggle("bg-light");
+	}
 }
 
 
@@ -52,8 +56,8 @@ function validate(){
 	var count =0;
 	var checked = false;
 	var input = document.getElementsByTagName("input");
-	
-			while(count < input.length-1){
+	var fieldDone = 0;
+			while(count < input.length){
 		if(input[count].value == ""){
 			console.log("this is null");
 			input[count].style.background = "#f55442";
@@ -61,6 +65,7 @@ function validate(){
 		else if(input[count].value != null){
 			console.log("this is not null");
 			input[count].style.background = "#51f542";
+			fieldDone++
 		}
 		count++;
 	}
@@ -81,7 +86,8 @@ function validate(){
 		for(var i = 0; i<input.length-1;i++){
 			checked = true;
 		}
-		 allOK = validEmail && checked;
+		
+		 allOK = validEmail && checked && fieldDone == input.length;
 		console.log(allOK+validEmail+checked)
 	
 	if(allOK){

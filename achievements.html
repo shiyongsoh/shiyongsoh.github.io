@@ -22,16 +22,16 @@
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 	<script src="js/navbar.js"></script>
 	<script src="js/slideshow.js"></script>
-	<script src="index.js"></script>
+	
 	<title>Achievements</title>
 </head>
 
-<body>
+<body class="nightmode">
 	<!--this defines the main top protion of the webpage-->
 	
 	<header>
 		<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-		<a id="daynight" class="nightmode nightfont btn btn-primary Nbutton">Night Mode</a>		  <div class="container">
+		 <div class="container">
 			<a class="navbar-brand js-scroll-trigger" href="#page-top"></a>
 			<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
 			  Menu
@@ -93,12 +93,12 @@
 				<button onclick="slideshow()">next</button>
 			</div>
 		</section>
-		<article class="container-fluid bg-light" id="next">
+		<article class="content container-fluid bg-light" id="next">
 			<h3 class="section-subheading text-primary text-uppercase pt-5 text-center webtitle">My Achievements</h3>
 			<section class="row justify-content-center">
 				
 				<!--copy from here-->
-				<figure class="col-lg-3 col-md-2 mr-5 certificate">
+				<figure class="col-md-4 col-xl-3 mr-5 certificate">
 					<a class="portfolio-link" onclick="popup('2018ITESchloarship')" href="#2018ITESchloarship">
 						<img class="img-fluid" src="images/recentCertificates/2018CDC&CCC_ITE_Schloarship.jpg" alt="2018 CDC & CCC ITE Schloarship">
 						<figcaption class="portfolio-caption">
@@ -109,7 +109,7 @@
 				</figure>
 				<!--to here-->
 				<!--copy from here-->
-				<figure class="col-lg-3 col-md-2 mr-5 certificate">
+				<figure class="col-md-4 col-xl-3 mr-5 certificate">
 					<a class="portfolio-link" onclick="popup('directorlist18')" href="#directorlist18">
 						<img class="img-fluid" src="images/recentCertificates/DirectorList2018.jpg" alt="Director List 2018">
 						<figcaption class="portfolio-caption">
@@ -120,7 +120,7 @@
 				</figure>
 				<!--to here-->
 				<!--copy from here-->
-				<figure class="col-lg-3 col-md-2 mr-5 certificate">
+				<figure class="col-md-4 col-xl-3 mr-5 certificate">
 					<a class="portfolio-link" onclick="popup('Eagles2017')" href="#Eagles2017">
 						<img class="img-fluid" src="images/recentCertificates/EaglesAward2017.jpg" alt="Director List 2018">
 						<figcaption class="portfolio-caption">
@@ -132,11 +132,8 @@
 					</a>
 				</figure>
 				<!--to here-->
-			</section>
-			<!---------------------another row----------------------->
-			<section class="row justify-content-center">
-				<!--copy from here-->
-				<figure class="col-lg-3 col-md-2 mr-5 certificate">
+			
+				<figure class="col-md-4 col-xl-3 mr-5 certificate">
 					<a class="portfolio-link" onClick="popup('acad2018')" href="#acad2018">
 						<img class="img-fluid" src="images/recentCertificates/EaglesAward2018.jpg" alt="2018 CDC & CCC ITE Schloarship">
 						<figcaption class="portfolio-caption">
@@ -148,7 +145,7 @@
 				</figure>
 				<!--to here-->
 				<!--copy from here-->
-				<figure class="col-lg-3 col-md-2 mr-5 certificate">
+				<figure class="col-md-4 col-xl-3 mr-5 certificate">
 					<a class="portfolio-link" onclick="popup('RC')" href="#RC">
 						<img class="carousel-inner" src="images/recentCertificates/RCCertificateOfAppointmentAsExecutiveMember.jpg" alt="Director List 2018">
 						<figcaption class="portfolio-caption">
@@ -159,7 +156,7 @@
 				</figure>
 				<!--to here-->
 				<!--copy from here-->
-				<figure class="col-lg-3 col-md-2 mr-5 certificate">
+				<figure class="col-md-4 col-xl-3 mr-5 certificate">
 					<a class="portfolio-link" onclick="popup('internship')" href="#internship">
 						<img class="carousel-inner" src="images/recentCertificates/NetDragon.jpg" alt="Director List 2018">
 						<figcaption class="portfolio-caption">
@@ -342,12 +339,12 @@
 			<p>Soh Shi Yong portfolio v2. SP DISM 1A01. &copy;2019</p>
 		</footer>
 	<!-- Bootstrap core JavaScript -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script> -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <!-- <script src="scripts/jquery-migrate.min.js"></script>
 <script src="scripts/superfish/hoverIntent.js"></script>
 <script src="scripts/superfish/superfish.min.js"></script> -->
-
+<script src="index.js"></script>
 	<script>
 	slideshow();
 	/*$('.masthead-left').animate(
@@ -360,7 +357,7 @@
   {
    $("#mastheadhome").fadeTo();
   }, 5000);*/
-$(document).ready(function() {
+/*$(document).ready(function() {
    var container = $('.projects-section');
    var content = $('.modal-content');
    var words = $('.text-muted');
@@ -381,15 +378,7 @@ $(document).ready(function() {
 	contenth2.toggleClass('nightfont');
 	contenth4.toggleClass('nightfont');
 	contentparagraph.toggleClass('nightfont');
-	
-	 
-	/*if($('#daynight').html('background-color', '#666')){
-		button.innerHTML = "Day Mode";
-		
-		}
-	else if($('#daynight').css('background-color', '#eee')){
-		button.innerHTML = "Night Mode";
-		}*/
+
 		if($('#daynight').html()== 'Day Mode'){
 		button.innerHTML = 'Night Mode';
 		}
@@ -398,7 +387,7 @@ $(document).ready(function() {
 	}
 	
    });
-   });
+   });*/
   /*
   $('#nightmode').click(function() {
   $('#projects-home').toggleClass('.background');

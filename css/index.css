@@ -56,15 +56,12 @@ body{
 
 
 /*Night mode*/
-.nightmode body{
-	background-color:#000000;
+
+.nightmode main > content{
+	background-color:#555555;
+	transition:2s;
 }
-.nightmode article{
-	background-color:#ffffff;
-}
-.nightmode .timeline{
-	color:#ff0000;
-}
+
 
 /*slideshow*/
 .goBehind{

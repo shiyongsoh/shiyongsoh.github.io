@@ -5,3 +5,7 @@
 hr{
 	background-color:#fff;
 }
+.table-borderless td,
+.table-borderless th {
+    border: 0;
+}

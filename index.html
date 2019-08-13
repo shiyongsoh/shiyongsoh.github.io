@@ -69,7 +69,7 @@
 	
 		<!--slideshow end-->
 
-		<section class="container-fluid greeter">
+		<section class="container-fluid">
 			
 			<div class="goBehind">
 				<img class="slide show" src="images/20190118_161509.jpg">
@@ -80,7 +80,7 @@
 			</div>
 			<div class="container align-items-center caption">
 				  <h1 class="mx-auto my-0 text-uppercase webtitle">Hi, I am Shi Yong</h1>
-				  <h3 class="mx-auto mt-2 mb-5 websubtitle">This is my story</h3>
+				  <h3 class="mx-auto mt-2 mb-1 websubtitle">This is my story</h3>
 				  <a href="#next" class="btn btn-primary Nbutton">See more</a>
 				  
 			</div>
@@ -93,47 +93,31 @@
 				<button onclick="slideshow()">next</button>
 			</div>
 		</section>
-		<section id="projects-home" class="content projects-section">
-      <div class="container py-5" id="next">
-        <!-- Project One Row -->
-		<!--Copy from here-->
-        <figure id="about" class="row justify-content-center no-gutters mb-5 mb-lg-0">
-          <div id="p2" class="col-lg-6 js-scroll-trigger">
-            <img class="img-fluid" src="images/20171001_160210.jpg" alt="">
-          </div>
-          <figcaption class="col-lg-6">
-            <article class="bg-dark px-3 text-center h-100 project">
-              <section class="d-flex h-100">
-                <div class="project-text w-100 my-auto text-center text-lg-left">
-                  <h3 class="text-white">Hi, I am Shi Yong</h3>
-                  <p class="mb-0 text-white-50">My interest in stack development, and also penetration testing drive me to take up this course.<hr></p><a href="achievements.html">Read on and find out more</a></p>
-                 
-                </div>
-              </section>
-            </article>
-          </figcaption>
-        </figure>
-<!--To here for align right codes-->
-        <!-- Project Two Row -->
-		<!--Copy from here-->
-        <div class="row justify-content-center no-gutters">
-          <div class="col-lg-6">
-            <img class="img-fluid cover" src="images/DSC_0010.jpg" alt="">
-          </div>
-          <div class="col-lg-6 order-lg-first">
-            <div class="bg-dark px-3 text-center h-100 project">
-              <div class="d-flex h-100">
-                <div class="project-text w-100 my-auto text-center text-lg-right">
-                  <h4 class="text-white">Glimpse of my past </h4>
-                  <p class="mb-0 text-white-50">Being someone who does not understand the importance of academics, how do I end up here?<hr> <a href="about.html">Read on and find out more</a></p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
+		<article id="projects-home" class="bg-light content projects-section container-fluid">
+			<section class="row d-flex justify-content-center container-fluid">
+				<div class="w-75 my-5 d-flex justify-content-center table-responsive">
+				  <table class="borderless table-dark d-block">
+					<tr class="container-fluid">
+						<td width="50%"><h3 class="mx-5 text-white text-right">Hi, I am Shi Yong</h3>
+							  <p class="mb-0 text-white-50 mx-5 text-right">My interest in stack development, and also penetration testing drive me to take up this course.<hr></p>
+							  <a href="achievements.html" class="mx-5 float-right">Read on and find out more</a></p>
+						</td>
+						<td width="50%"><img class="img-fluid cover" src="images/DSC_0010.jpg" alt=""></td>
+					</tr>
+					<tr class="container-fluid">
+						<td width="50%"><img class="img-fluid" src="images/20171001_160210.jpg" alt=""></td>
+						<td width="50%">
+						 <div class="project-text w-100 my-auto text-center text-lg-left">
+							<h3 class="text-white mx-5">Glimpse of my past </h3>
+							<p class="mb-0 text-white-50 mx-5">My interest in stack development, and also penetration testing drive me to take up this course.<hr></p>
+							<a href="achievements.html" class="mx-5">Read on and find out more</a></p>
+						</div>
+						</td>
+					</tr>
+				  </table>
+			  </div>
+		  </section>
+    </article>
 	</main>
 	<footer class="d-flex justify-content-center bg-light">
 			<p>Soh Shi Yong portfolio v2. SP DISM 1A01. &copy;2019</p>

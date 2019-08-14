@@ -1,44 +1,28 @@
-(function($) {
-  "use strict"; // Start of use strict
-
-  // Floating label headings for the contact form
-  $("body").on("input propertychange", ".floating-label-form-group", function(e) {
-    $(this).toggleClass("floating-label-form-group-with-value", !!$(e.target).val());
-  }).on("focus", ".floating-label-form-group", function() {
-    $(this).addClass("floating-label-form-group-with-focus");
-  }).on("blur", ".floating-label-form-group", function() {
-    $(this).removeClass("floating-label-form-group-with-focus");
-  });
-
-  // Show the navbar when the page is scrolled up
-  var MQL = 992;
-
-  //primary navigation slide-in effect
-  if ($(window).width() > MQL) {
-    var headerHeight = $('#mainNav').height();
-    $(window).on('scroll', {
-        previousTop: 0
-      },
-      function() {
+window.onscroll = function() {
+	changeStyle();
+	}
+var navbar = document.getElementById('navbar');
+console.log(navbar)
+console.log(screen.width);
+var width;
+function changeStyle(){
+	if(document.documentElement.scrollTop > 50){
+		//navbar.classList.remove('navbar-dark');
+		if(screen.width > 994){
+		navbar.classList.remove('bg-transparent');	
+		}
 		
-        var currentTop = $(window).scrollTop();
-        //check if user is scrolling up
-        if (currentTop < this.previousTop) {
-			console.log("scrolling up");
-          //if scrolling up...
-          if (currentTop > 0 && $('#mainNav').hasClass('is-fixed')) {
-            $('#mainNav').addClass('is-visible');
-          } else {
-            $('#mainNav').removeClass('is-visible is-fixed');
-          }
-        } else if (currentTop > this.previousTop) {
-          //if scrolling down...
-		  console.log("scrolling up");
-          $('#mainNav').removeClass('is-visible');
-          if (currentTop > headerHeight && !$('#mainNav').hasClass('is-fixed')) $('#mainNav').addClass('is-fixed');
-        }
-        this.previousTop = currentTop;
-      });
-  }
-
-})(jQuery); // End of use strict
+		//navbar.style.display = "none";
+		//navbar.classList.add('')
+	}
+	else{
+		//navbar.classList.add('navbar-dark');
+		
+		navbar.classList.add('bg-transparent');
+	}
+	
+	width = document.body.clientWidth;
+		if(width < 994){
+	navbar.classList.remove('bg-transparent');	
+	}
+}

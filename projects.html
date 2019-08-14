@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!--verifed at 7.19pm, 1/6/2019-->
+<!--verifed at 10.00pm, 14/8/2019-->
 <html lang="en">
 
 <head>
@@ -27,7 +27,7 @@
 	<!--Header defines the main top protion of the webpage, which consist of the Navbar-->
 	
 	<header>
-		<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+		<nav class="navbar navbar-expand-lg navbar-dark bg-transparent bg-dark fixed-top yongnav" id="navbar">
 		<div class="container">
 			<a class="navbar-brand js-scroll-trigger" href="#page-top"></a>
 			<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -142,24 +142,21 @@
 		<!--Hides this photo away-->
 		 <section class="modal" id="cny" onClick="popup('cny')">
 			<figure class="modal-dialog modal-lg">
-				<div class="modal-content">
+				<figcaption class="modal-content">
 					<div class="modal-header">
 						<h2 class="modal-title">Chinese New Year</h2>
 					</div>
-
-					 <span class="modal-body d-flex justify-content-center">
-						<img src="images/cny2-01.svg" alt="2018 CDC & CCC ITE Schloarship">
-					<figcaption>
-						<h6 class="modal-title"></h6>
-						<p>This projects was done with Jurong Spring RC Zone A. To have a new year celebration and to bond, and know each other,and know what is happening in our community.</p>
 						
-					</figcaption>
-					</span> 
-					<span class="modal-footer">
+					 <div class="modal-body d-flex justify-content-center">
+						<img src="images/cny2-01.svg" alt="2018 CDC & CCC ITE Schloarship">
+						
+						<p>This projects was done with Jurong Spring RC Zone A. To have a new year celebration and to bond, and know each other,and know what is happening in our community.</p>
+					</div> 
+					<div class="modal-footer">
 						<p class="Close">Click to close this popup</p>
-					</span>
+					</div>
 					
-				</div>
+				</figcaption>
 			</figure>
 		</section> 
 		<!--Seperates one popup from another-->
@@ -168,22 +165,21 @@
 		<section class="modal" id="elderlybreakfast" onClick="popup('elderlybreakfast')">
 			<figure class="modal-dialog modal-lg">
 
-				<div class="modal-content">
+				<figcaption class="modal-content">
 					<div class="modal-header">
 						<h2 class="modal-title">Breakfast with Love</h2>
 					</div>
 				
-				<span class="modal-body d-flex justify-content-center">
+				<div class="modal-body d-flex justify-content-center">
 					<img src="images/elderlybreakfast.svg" alt="Director List 2018">
-					<figcaption>
 						<p>This projects was done with Jurong Spring RC Zone A. To have a new year celebration and to bond, and know each other,and know what is happening in our community.</p>
-					</figcaption>
-				</span>
-				<span class="modal-footer">
+					
+				</div>
+				<div class="modal-footer">
 					<p class="Close">Click to close this popup</p>
-				</span>
+				</div>
 				
-			</div>
+			</figcaption>
 
 			</figure>
 		</section>
@@ -197,7 +193,7 @@
 		<section class="portfolio-modal modal" id="eartha2017" onClick="popup('eartha2017')">
 			<figure class="modal-dialog modal-lg">
 
-				<div class="modal-content">
+				<figcaption class="modal-content">
 					<div class="modal-header">
 						<h2 class="modal-title">eartha2017</h2>
 					</div>
@@ -205,17 +201,15 @@
 				<div class="modal-body d-flex">
 					<img src="images/Backdrop_1920x1080(4trial)copy.svg" alt="Eartha 2017">
 				
-					<figcaption>
 						
 						<p>Eartha 2017 is an event organise by youth to bring awareness about earth hour. During these event also
 						showcases about how we can help save the enviroment.</p>
 						
-					</figcaption>
 				</div>
-				<span class="modal-footer">
+				<div class="modal-footer">
 					<p class="Close">Click to close this popup</p>
-				</span>
 				</div>
+				</figcaption>
 			</figure>
 		</section>
 		<!--Seperates one popup from another-->
@@ -231,6 +225,7 @@
 <script src="scripts/superfish/hoverIntent.js"></script>
 <script src="scripts/superfish/superfish.min.js"></script> -->
 <script src="index.js"></script><!--Does miscancellanous stuff like display and hide popups-->
+<script src="js/navbar.js"></script>
 	<script>
 	slideshow();
 

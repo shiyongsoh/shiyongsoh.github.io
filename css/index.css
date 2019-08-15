@@ -12,6 +12,9 @@ html{
 body{
 	background-color:#d3d3d3;
 }
+nav, nav ul{
+	transition:0.25s;
+}
 
 	a{
 		text-decoration:none !important;
@@ -22,11 +25,14 @@ body{
   background-color: white;
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
-.yongNav{
-	background-opacity:0;
+.yongnav{
+	margin-top:20px;
+	
 }
 
-
+ul .ml-auto{
+	transition:2s;
+}
 /*start portfolio*/
 .greeter{
 	margin-left:-1%;

@@ -35,7 +35,7 @@
 				for(var i = 0; i <slides.length; i++){
 					if(i != slidesCounter){
 					slides[i].style.display = "none";		
-					preview[slidesCounter].style.border = "none";
+					preview[i].style.border = "none";
 					}	
 				}
 			},1200)

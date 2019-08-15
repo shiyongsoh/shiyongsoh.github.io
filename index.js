@@ -72,7 +72,9 @@ function validate(){
 		//---
 		var email = document.getElementById('email').value;
 		console.log(email);
-		var emailSupposeToHave = new RegExp("@[a-zA-Z0-9]");
+		var emailpattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+		//var emailSupposeToHave = new RegExp("@[a-zA-Z0-9]");
+		var emailSupposeToHave = new RegExp(emailpattern);
 		var validEmail = emailSupposeToHave.test(email);
 		console.log("Email is "+validEmail + " \nemail suppose to have" + emailSupposeToHave + "\nemail" + email);
 		//---

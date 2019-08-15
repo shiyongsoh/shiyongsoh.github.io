@@ -3,8 +3,6 @@ window.onscroll = function() {
 	}
 var navbar = document.getElementById('navbar');
 var navul = document.getElementsByTagName('ul');
-console.log(navbar)
-console.log(screen.width);
 var width;
 function changeStyle(){
 	if(document.documentElement.scrollTop > 50){

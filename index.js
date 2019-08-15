@@ -50,6 +50,19 @@ function nightmode(){
 
 
 function validate(){
+	var phoneValid;
+		var phone = document.getElementById("phone").value;
+		console.log("phone" + isNaN(phone));
+		if(isNaN(phone) == true){
+			console.log("Phone is false");
+			document.getElementById("phone").style.background = "#f55442";
+			phoneValid = false;
+		}
+		else{
+			console.log("Phone is true");
+			document.getElementById("phone").style.background = "#51f542";
+			phoneValid = true;
+		}
 	var isEmpty="";
 	event.preventDefault();
 	console.log("hmm");
@@ -68,7 +81,8 @@ function validate(){
 			fieldDone++
 		}
 		count++;
-	}
+	}	
+		
 		//---
 		var email = document.getElementById('email').value;
 		console.log(email);
@@ -88,9 +102,9 @@ function validate(){
 		for(var i = 0; i<input.length-1;i++){
 			checked = true;
 		}
-		
-		 allOK = validEmail && checked && fieldDone == input.length;
-		console.log(allOK+validEmail+checked)
+		console.log(phoneValid)
+		 allOK = validEmail && checked && fieldDone== input.length && phoneValid;
+		console.log(allOK)
 	
 	if(allOK){
 		window.location.href = "thankyou.html";

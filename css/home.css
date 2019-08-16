@@ -1,6 +1,6 @@
-/*verifed at 12.40am, 4/8/2019*/
+/*verifed at 10.26pm 16/8/2019*/
 @import url("index.css");
-
+/*hr tag is to ensure that the hr is white colour by default*/
 hr{
 	background-color:#fff;
 }
@@ -10,4 +10,6 @@ hr{
 }
 .container-fluid td{
 	width:50%;
-}
+}/*
+The container-fluid are forced to have 50%
+*/

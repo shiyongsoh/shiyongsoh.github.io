@@ -1,25 +1,25 @@
-/*verifed at 12.44am 14/8/2019*/
+/*verifed at 10.25pm 16/8/2019*/
 *{
 	border:0;
 	margin:0;
 	padding:0;
 	font-family:Montserrat;
 }
-html{
+html{/*This is to ensure that the scroll for the entire html page are always smooth scrolling*/
 	scroll-behavior: smooth;
 	
 }
-body{
+body{/*This is to ensure that the body is always in the stated colour*/
 	background-color:#d3d3d3;
 }
-nav, nav ul{
+nav, nav ul{/*This is to have the navbar effect*/
 	transition:0.25s;
 }
 
 	a{
-		text-decoration:none !important;
+		text-decoration:none !important;/*Ensure that there is no underline for anchor link*/
 	}
-	#mainNav {
+	#mainNav {/*to style the main navigation bar*/
   /*position: absolute;*/
   border-bottom: 1px solid #e9ecef;
   background-color: white;
@@ -31,10 +31,10 @@ nav, nav ul{
 }
 
 ul .ml-auto{
-	transition:2s;
+	transition:2s;/*Effects for anything with ml-auto*/
 }
 /*start portfolio*/
-.greeter{
+.greeter{/*Greeter is to style the navbar*/
 	margin-left:-1%;
 	padding:0;
 	min-height: 35rem;
@@ -45,14 +45,9 @@ ul .ml-auto{
 
 /*Night mode*/
 
-.nightmode main > content{
-	background-color:#555555;
-	transition:2s;
-}
-
 
 /*slideshow*/
-.goBehind{
+.goBehind{/*To have photos to go behind, as a parallax slideshow*/
 	z-index:-1;
 	position:fixed;
 	display:block;
@@ -60,23 +55,18 @@ ul .ml-auto{
 	height:100%;
 	
 }
-.caption{
+.caption{/*This is for the subtitle of the home*/
 		margin-top:20%;
 		margin-bottom:11%;
 		z-index:1;
 		
 }
-.content{
+.content{/*This is for the background to cover the entire, webpage, so that there will be no whitespace*/
 	background-color:#d3d3d3;
 	background-size:cover;
 }
-.slide{
-	/* 	position:absolute;
-		width:100%;
-		height:auto;
-		display:none;
-		background-color:blue;
-		margin:-20% 0% 0% -10%; */
+.slide{/*This is to ensure that the photos are there to ensure that the pictures are always there, for parallax effect*/
+	
 		position:absolute;
 		width:100%;
 		height:auto;
@@ -97,43 +87,43 @@ ul .ml-auto{
 }
 
 
-.remove{
+.remove{/*Fade the picture while switching, hiding it in the process*/
 	
 	animation-name: hide;
 	animation-duration: 1.5s;
 }
-.show{
+.show{/*Fade the picture while switching, showing it in the process*/
 	animation-name: show;
 	animation-duration: 1.5s;
 	
 	
 }
-.thumbnails{
+.thumbnails{/*This is to position the image for the thumbnails*/
 
 	margin-left:30%;
 	margin-bottom:2%;
 	width:70%;
 	height:auto;
 }
-.thumbnails img{
+.thumbnails img{/*This is for small preview images, for the user to select what image they want*/
 	width:10%;
 	margin:1% auto;
 }
-.nav-link{
+.nav-link{/*This is to set the colour for the nav-link*/
 	color:#fff !important;
 }
-.webtitle{
+.webtitle{/*For the main title*/
 	color:white;
 	font-weight:bold;
 }
-.websubtitle{
+.websubtitle{/*For the subtitle*/
 	color:#63fffa;
 	border: 3px #fff;
 }
-.Nbutton{
+.Nbutton{/*Navigation button*/
 	background-color:#4ff9ff;
 	color:black;
 }
-.Nbutton:hover{
+.Nbutton:hover{/*Give the effects for the navigation button on hover*/
 	color:#fff !important;
 }

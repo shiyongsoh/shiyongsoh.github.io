@@ -1,27 +1,4 @@
-/*verifed at 12.44am 14/8/2019*/
-/*This is the default css and thus will be in every stylesheet*/
 @import url("index.css");
-
-.table{
-	width:225%;
+.warn{
+	display:none;
 }
-h6{
-  font-size: 300%;
-  margin:0 40%;
-}
-/*This is to ensure that the form will always have a spacing in
-between, it will also set the textarea*/
-
-/*This will apply the styles inside all the child of the form tag*/
-/* form > *{ */
-	/* margin: 5% -65%; */
-	/* height: 5em; */
-	/* width: 50em; */
-	/* display: block; */
-	/* border: 3px solid #555; */
-/* } */
-/* form textarea{ */
-  /* width:220%; */
-  /* height:200%; */
-/* } */
-

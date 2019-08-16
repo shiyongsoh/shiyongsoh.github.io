@@ -17,7 +17,7 @@
 	<!-- <link rel="stylesheet" href="vendor/owlcarousel/assets/owl.carousel.min.css">
 	<link rel="stylesheet" href="ionicons/css/ionicons.min.css">
 	<link rel="stylesheet" href="vendor/animate.min.css"> -->
-	<link rel="stylesheet" href="css/achievements.css">
+	<link rel="stylesheet" href="css/contact.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 	<script src="js/navbar.js"></script>
@@ -88,7 +88,6 @@
 				<img class="preview" onclick="slideshow(2)" src="images/IMG_1833.jpg" alt="Hope">
 				<img class="preview" onclick="slideshow(3)" src="images/DSC_0010.jpg" alt="Subway station">
 				<img class="preview" onclick="slideshow(4)" src="images/_MG_3432.jpg" alt="Sunrise">
-				<button onclick="slideshow()">next</button>
 			</div>
 		</section>
 		<!--slideshow end-->
@@ -102,21 +101,21 @@
 					<div class="form-group floating-label-form-group controls mb-0 pb-2">
 					<label for="name">Name:</label>
 					<input class="form-control" id="name" type="text" placeholder="Name">
-					
+					<p class="warn text-danger">Please fill in your name</p>
 					</div>
 				  </div>
 				  <div class="control-group">
 					<div class="form-group floating-label-form-group controls mb-0 pb-2">
-					<label for="email">Email</label>
+					<label for="email text-danger">Email</label>
 					<input class="form-control" id="email" type="email" placeholder="Email Address">
-					
+					<p class="warn text-danger" id="emailWarn">Please fill in your Email</p>
 					</div>
 				  </div>
 				  <div class="control-group">
 					<div class="form-group controls mb-0 pb-2">
 					<label for="phone">Phone:</label> 
 					<input class="form-control" id="phone" type="tel" placeholder="Phone Number">
-					
+					<p id="phoneWarn" class="warn text-danger">Please fill in your Phone</p>
 					</div>
 				  </div>
 				  <div class="control-group">

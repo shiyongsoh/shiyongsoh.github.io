@@ -58,27 +58,30 @@ function validate(){
 	var input = document.getElementsByTagName("input");
 	var phoneValid;
 	var phone = document.getElementById("phone").value;
+	var warn = document.getElementsByClassName("warn");
 	console.log("phone" + isNaN(phone));
 	
 	var fieldDone = 0;
 			while(count < input.length){
 		if(input[count].value == ""){
 			console.log("this is null");
-			input[count].style.background = "#f55442";
+			//input[count].style.display = "#f55442";
+			warn[count].style.display = "block";
 		}
 		else if(input[count].value != null){
 			console.log("this is not null");
-			input[count].style.background = "#51f542";
+			//input[count].style.background = "#51f542";
+			warn[count].style.display = "none";
 			fieldDone++
 		}
 		if(isNaN(phone) == true){
 			console.log("Phone is false");
-			document.getElementById("phone").style.background = "#f55442";
+			document.getElementById("phoneWarn").style.display = "block";
 			phoneValid = false;
 		}
 		else{
 			console.log("Phone is true");
-			document.getElementById("phone").style.background = "#51f542";
+			document.getElementById("phoneWarn").style.display = "none";
 			phoneValid = true;
 		}
 
@@ -96,10 +99,13 @@ function validate(){
 		console.log("Email is "+validEmail + " \nemail suppose to have" + emailSupposeToHave + "\nemail" + email);
 		//---
 		if(validEmail){
-		document.getElementById('email').style.background = "#51f542";
+		//document.getElementById('email').style.background = "#51f542";
+		document.getElementById('emailWarn').style.display = "none";
+		
 		}
 		else{
-			document.getElementById('email').style.background = "#f55442";
+			//document.getElementById('email').style.background = "#f55442";
+			document.getElementById('emailWarn').style.display = "block";
 		}
 		var allOk;
 		for(var i = 0; i<input.length-1;i++){

@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <!--verifed at 10.00pm, 14/8/2019-->
 <html lang="en">
-
 <head>
 	<meta charset="utf-8">
 	<meta name="description" content="Overview of the webpage">
@@ -10,17 +9,20 @@
 	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 	<link href="css/fontawesome-free/css/all.min.css" rel="stylesheet">
 	<link rel="icon" type="image/png" href="images/yong.png">
-	<link href="vendor/animate.min.css" rel="stylesheet">
+	<!-- <link href="vendor/animate.min.css" rel="stylesheet"> -->
+	<link rel="stylesheet" href="bootstrap/css/bootstrap-reboot.min.css">
 	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="bootstrap/css/bootstrap-grid.min.css">
-	<link rel="stylesheet" href="bootstrap/css/bootstrap-reboot.min.css">
-	<link rel="stylesheet" href="css/achievements.css"><!--achievements.css is used here as they have the same layout. Thus, only this stylesheet is used-->
-	<meta name="viewport" content="width=device-width, initial-scale=1.0"><!--To ensure that it scales across all device resolution with the help of bootstrap-->
-	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script><!--Call Jquery from the CDN-->
+	<!-- <link rel="stylesheet" href="vendor/owlcarousel/assets/owl.carousel.min.css">
+	<link rel="stylesheet" href="ionicons/css/ionicons.min.css">
+	<link rel="stylesheet" href="vendor/animate.min.css"> -->
+	<link rel="stylesheet" href="css/achievements.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 	<script src="js/navbar.js"></script>
-	<script src="js/slideshow.js"></script><!--Gives the webpage a slideshow-->
+	<script src="js/slideshow.js"></script>
 	
-	<title>Projects</title>
+	<title>Achievements</title>
 </head>
 
 <body>
@@ -31,7 +33,7 @@
 		<div class="container">
 			<a class="navbar-brand js-scroll-trigger" href="#page-top"></a>
 			<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-			  Menu
+			  
 			  <i class="fas fa-bars"></i>
 			</button>
 			
@@ -153,7 +155,7 @@
 						<p>This projects was done with Jurong Spring RC Zone A. To have a new year celebration and to bond, and know each other,and know what is happening in our community.</p>
 					</div> 
 					<div class="modal-footer">
-						<p class="Close">Click to close this popup</p>
+						Click to close this popup
 					</div>
 					
 				</figcaption>
@@ -162,25 +164,21 @@
 		<!--Seperates one popup from another-->
 
 		<!--Hides this photo away-->
-		<section class="modal" id="elderlybreakfast" onClick="popup('elderlybreakfast')">
+		<section class="portfolio-modal modal" id="elderlybreakfast" onClick="popup('elderlybreakfast')">
+			
 			<figure class="modal-dialog modal-lg">
-
 				<figcaption class="modal-content">
 					<div class="modal-header">
-						<h2 class="modal-title">Breakfast with Love</h2>
+							<h2 class="modal-title">Breakfast with Love</h2>
 					</div>
-				
-				<div class="modal-body d-flex justify-content-center">
-					<img src="images/elderlybreakfast.svg" alt="Director List 2018">
+				<div class="modal-body d-flex">
+				<img src="images/elderlybreakfast.svg" alt="Director List 2018">
 						<p>This projects was done with Jurong Spring RC Zone A. To have a new year celebration and to bond, and know each other,and know what is happening in our community.</p>
-					
 				</div>
 				<div class="modal-footer">
 					<p class="Close">Click to close this popup</p>
 				</div>
-				
-			</figcaption>
-
+				</figcaption>
 			</figure>
 		</section>
 		<!--Seperates one popup from another-->
@@ -192,19 +190,16 @@
 		<!--Hides this photo away-->
 		<section class="portfolio-modal modal" id="eartha2017" onClick="popup('eartha2017')">
 			<figure class="modal-dialog modal-lg">
-
 				<figcaption class="modal-content">
 					<div class="modal-header">
 						<h2 class="modal-title">eartha2017</h2>
 					</div>
-
-				<div class="modal-body d-flex">
+				<div class="modal-body d-flex justify-content-center">
 					<img src="images/Backdrop_1920x1080(4trial)copy.svg" alt="Eartha 2017">
 				
 						
 						<p>Eartha 2017 is an event organise by youth to bring awareness about earth hour. During these event also
 						showcases about how we can help save the enviroment.</p>
-						
 				</div>
 				<div class="modal-footer">
 					<p class="Close">Click to close this popup</p>

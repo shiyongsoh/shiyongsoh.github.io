@@ -25,6 +25,7 @@
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 	<script src="js/navbar.js"></script>
 	<script src="js/slideshow.js"></script>
+	<script src="js/displayAchivements.js"></script>
 	
 	<title>Achievements</title>
 </head>
@@ -98,7 +99,7 @@
 		<!--slideshow end-->
 		<article class="content container-fluid bg-light" id="next">
 			<h3 class="section-subheading text-primary text-uppercase pt-5 text-center webtitle">My Achievements</h3>
-			<section class="row justify-content-center">
+			<section class="row justify-content-center" id="contentToShow">
 				
 				<!--This gives the image a caption and a preview-->
 				
@@ -180,6 +181,8 @@
 					</a>
 			
 				<!--This seperates one image and caption from the other-->
+
+				
 			</section>
 			<!--This consist of pictures and captions-->
 			
@@ -193,7 +196,8 @@
 
 
 	<!--This html codes will hide from the user unless it it clicked on-->
-	
+	<div id="noshow">
+		
 		<!--Hides this photo away-->
 		 <section class="modal" id="2018ITESchloarship" onClick="popup('2018ITESchloarship')">
 			<figure class="modal-dialog modal-lg">
@@ -333,6 +337,8 @@
 		<!--Seperates one popup from another-->
 
 	<!--This seperates one image and caption from the other-->
+	
+</div>
 	<footer class="d-flex justify-content-center bg-light">
 			<p>Soh Shi Yong portfolio v2. SP DISM 1A01. &copy;2019</p>
 		</footer>
@@ -393,6 +399,19 @@
 	});
 	});
 	*/
+	</script>
+
+	<script>
+		//syntax 
+		// thingsToShow(name,achivementName, alternateText = 0, modalContent, modalTitle,moreContent)
+		thingsToShow('digitalAnimation','images/yong/digital 3d animation 2014.jpg','',"hmm",'3D animation',"This was a competiton back in 2015, where I learnt more about 3d Animation. This competition have led me to be able to visualise 3d objects",'A foundation for my 3D animation and design skills. Click me to find out more <i class="fas fa-arrow-right"></i>');
+		thingsToShow('eaglesawd13','images/yong/eagale awd 2013.jpg','',"hmm",'Eagles Award 2013',"This was awarded for the leadership in CCA back in 2013. Where I first got extremely interested in IT and the foundation for who I am today","The beginning of my journey to who I am today Click me to find out more <i class='fas fa-arrow-right'></i>");
+		thingsToShow('eaglesawd14','images/yong/eagales awd 2014.jpg','',"hmm",'Eagles Award 2014',"This was awarded for the leadership in CCA back in 2014. I was nominated for this award because at the time, I was teaching my junios basic web programming, such as HTML. This skill was proven to be useful for them in the later competitions","I was nominated for this as I was teaching my juniors programming at that time. Click me to find out more <i class='fas fa-arrow-right'></i>");
+		thingsToShow('eaglesawd15','images/yong/eagales awd 2015.jpg','',"hmm",'Eagles Award 2015',"This was awarded for the leadership in CCA back in 2015. This was awarded for the leadership skills back in 2014 during the competition of SST Makeathon where we program a robot using arduino. As a team we learnt a lot about robotics and simple automation at that time. Subsequently we created a virtual campus in 2nd life. Where we map out the school and used programming to design certain things. The artifacts have been lost by now. But the video remains  <a href='https://youtu.be/8tYjFMaBmP8'>here</a>","I was nominated for this as I was a part of a 2 year project. Click me to find out more <i class='fas fa-arrow-right'></i>");
+		thingsToShow('eaglesawd17','images/yong/EAGALES award.jpg','',"hmm",'Eagles Award 2017',"This was awarded for participating in the National DataViz Competition. Where we talk about aging populations in singapore. This is the project that allow me to make use of my animation skills with adobe animate to create motion graphics and a bit of data analysis, using the software QGIS","This is where my skills in animation is applied, 3 years later. Click me to find out more <i class='fas fa-arrow-right'></i>");
+		thingsToShow('eaglesawd17','images/yong/EAGALES award.jpg','',"hmm",'Eagles Award 2017',"This was awarded for participating in the National DataViz Competition. Where we talk about aging populations in singapore. This is the project that allow me to make use of my animation skills with adobe animate to create motion graphics and a bit of data analysis, using the software QGIS","This is where my skills in animation is applied, 3 years later. Click me to find out more <i class='fas fa-arrow-right'></i>");
+
+		// thingsToShow('')
 	</script>
 </body>
 

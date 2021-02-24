@@ -65,7 +65,7 @@ function thingsToShow(name,achivementName, alternateText = 0, modalContent, moda
     modalFooter.setAttribute('class','modal-footer')
     certImage.setAttribute("src",achivementName);
     certImage.setAttribute("alt", alternateText)
-    certImage.setAttribute("class", "carousel-inner")
+    // certImage.setAttribute("class", "carousel-inner")
     certModalCaption.setAttribute('class','modal-content')
 
 

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<!--verfied at 10.25am, 18/8/2019-->
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Overview of the webpage">
+    <meta name="author" content="Soh Shi Yong">
+    <meta name="keywords" content="shiyongsoh, Soh Shi Yong, Shi Yong">
+    <meta name="robots" content="index, follow">
+    <meta property="site_name" content="shiyongsoh">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="icon" type="image/png" href="images/yong.png">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="css/about.css">
+    <link href="css/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link href="css/about.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <!-- <link href="css/freelancer.css" rel="stylesheet"> -->
+    <!-- <link href="css/agency.css" rel="stylesheet">  -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/index.js"></script>
+    <title>About</title>
+    <script src="js/slideshow.js"></script>
+    <!--Gives the webpage a slideshow-->
+    <style>
+        .parallax {
+            /* The image used */
+            /*background-image: url('img_parallax.jpg');*/
+            /*not going to be used becuase we are going to be attaching the image on the properties itself.*/
+
+
+            /* Full height */
+            height: 100%;
+
+            /* Create the parallax scrolling effect */
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+
+        }
+
+        .overlay {
+            background-color: rgba(0, 0, 0, 0.5);
+            /*z-index: 2;*/
+           /* width: 100%;*/
+            height: 100%;
+            min-height: 400px;
+
+        }
+
+        .section1 {
+            background-image: url('images/yong.jpg');
+            /*min-height: 400px;*/
+        }
+
+        .section2 {
+            background-image: url('images/B136061.jpg');
+            /*min-height: 400px;*/
+        }
+
+        .section3 {
+            background-image: url('images/DSC_0035.JPG');
+            /*min-height: 400px;*/
+        }
+        .NDVWrapper{
+            width: 80%;
+            max-width: 600px;
+            height: 100%;
+            margin:0 auto;
+            background-color: #ccc;
+        }
+        .NDVContainer {
+            /*margin: 0 auto;
+            height: 100%;*/
+            padding:56% ;
+            position: relative;
+        }
+        
+        .NDV {
+            /*width: 100%;
+            height: auto;*/
+           /* position: relative;*/
+            position:absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .NDV iframe{
+           
+        }
+
+        .section4 {
+            background-image: url('images/DSC_0010.JPG');
+            min-height: 400px;
+        }
+        .hideme{
+            /*display: none;*/
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-transparent bg-dark fixed-top" id="navbar">
+            <div class="container">
+                <a class="navbar-brand js-scroll-trigger" href="#page-top"></a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                    data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars"></i>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto yongnav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="achievements.html">Achievements</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="projects.html">Projects</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </nav>
+    </header>
+    <main>
+        <!--slideshow start-->
+        <section class="container-fluid">
+
+            <div class="goBehind">
+                <img class="slide show" src="images/20190118_161509.jpg" alt="Scenery">
+                <img class="slide remove" src="images/DSC_0012.JPG" alt="City">
+                <img class="slide remove" src="images/IMG_1833.JPG" alt="Hope">
+                <img class="slide remove" src="images/DSC_0010.JPG" alt="Subway station">
+                <img class="slide remove" src="images/MG_3432.JPG" alt="Sunrise">
+            </div>
+            <div class="container align-items-center caption">
+                <h1 class="mx-auto my-0 text-uppercase webtitle">My past</h1>
+                <h3 class="mx-auto mt-2 mb-1 websubtitle">This is my story</h3>
+                <a href="#next" class="btn btn-primary Nbutton">See more</a>
+
+            </div>
+            <div class="thumbnails d-block">
+                <img class="preview" onclick="slideshow(0)" src="images/20190118_161509.jpg" alt="Scenery">
+                <img class="preview" onclick="slideshow(1)" src="images/DSC_0012.JPG" alt="City">
+                <img class="preview" onclick="slideshow(2)" src="images/IMG_1833.JPG" alt="Hope">
+                <img class="preview" onclick="slideshow(3)" src="images/DSC_0010.JPG" alt="Subway station">
+                <img class="preview" onclick="slideshow(4)" src="images/MG_3432.JPG" alt="Sunrise">
+            </div>
+        </section>
+        <!--slideshow end-->
+        <!-- contents in parallax start -->
+        <section class="">
+        <section class="parallax section1 container-fluid ">
+            <div class="overlay row">
+
+                    <div class="col">
+                        <h1 style="color: white;">Hi! I love computers</h1>
+                        <p style="color: white;">My name is Shi Yong and I have passion in computers since young. It
+                            made
+                            such a big impact on my I became a full stack developer prior to my NS.</p>
+                    </div>
+                </div>
+        </section>
+        <!-- contents in parallax end -->
+        <!-- contents in parallax start -->
+        <section class="parallax section2 container-fluid hideme">
+            <div class="overlay row">
+                <div class="col">
+                    <h1 style="color: white;">2013 - 2016, Why I love computers</h1>
+                    <!-- <p style="color: white;">I discovered that interest during my secondary school days and learnt to code create webpages. Apart from this, I am interested in taking things apart, so I went to a course that teach me how to fix electrical wiring, reparing refigerators and air conditioners, plumbing. During this time period I took up numerous courses provided by my school to learn robotics, 3D animation and web development, which laid down my foundation to be who I am today</p> -->
+                    <p style="color: white;">Realising that I am streamed to normal technical, I went on to pursue
+                        my
+                        interest in computer for the sheer pleasure of it. During that time, I learnt to code, such
+                        as HTML,
+                        CSS for web development, and arduino for robotics. Picked up other technical skills such as
+                        photography, sound systems, 3D animation and learnt how to repair fridge and air
+                        conditioners.
+                        During which, I got my first taste in victory, where I won my first judges award in Sec 1.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <!-- contents in parallax end -->
+        <!-- contents in parallax start -->
+        <section class="parallax section3 container-fluid hideme">
+            <div class="overlay row">
+                <div class="col-lg-6 h-100">
+
+                    <h1 style="color: white;">2017 - 2018, How I found my passion</h1>
+                    <!-- <p style="color: white;">After gradutating from secondary school. I realised that I have a passion for programming, which is why I took up a course in social media and web devlopment. Where I pick up a more in depth knowledge in web development and design of marketing materials.</p> -->
+                    <p style="color: white;"> Upon gradutating my secondary school. I reflected upon what I have
+                        learnt,
+                        and where my passions are, I realised that programming is somehting that I want to
+                        specialise in
+                        amongst the rest of the things I have picked up along the way. This is when I got myself
+                        into
+                        the NITEC course of Social Media and Web Development. During which I learnt how to build a
+                        website, design marketing materials, and pick up some tips and tricks in videography and
+                        went on
+                        to enter into Nation DataViz competition hosted by GovTech, which taught me valuable skills
+                        such
+                        as animation and putting a point across to audience in a clear and simple manner.</p>
+                </div>
+                <div class="col-lg-6">
+                   <div class="NDVWrapper">
+                    <div class="NDVContainer">
+                        <iframe width="200" height="200" class="NDV" src="https://www.youtube.com/embed/_tvRmwzAnX8" title="Eldercare facilities in Singapore (Team ShiMarson)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+        <!-- contents in parallax end -->
+        <!-- contents in parallax start -->
+        <section class="parallax section4 container-fluid hideme">
+            <div class="overlay row">
+                <div class="col">
+
+                    <h1 style="color: white;">2019 - 2022, Giving back to community</h1>
+                    <!-- <p style="color: white;">After gradutating from secondary school. I realised that I have a passion for programming, which is why I took up a course in social media and web devlopment. Where I pick up a more in depth knowledge in web development and design of marketing materials.</p> -->
+                    <p style="color: white;">After finishing 2 years of NITEC, I decided to pursue cybersecurity in
+                        Singapore Polytechnic. During which I have learnt how to do malware reverse engineering,
+                        cyber
+                        forensics, ethical hacking and defense, managing of windows servers and domain controller
+                        amongst other skills. Which gave me an idea on how cybersecurity and system administration
+                        works. During this time, I have also volunteered in the community during my free time as I
+                        wish
+                        to give back to community by organising the first online class during COVID-19 pandemic on
+                        HTML
+                        and CSS through the RC amongst many other events. </p>
+                    <!-- Just like how I was given help when I need it the most. -->
+                </div>
+            </div>
+        </section>
+        <section class="parallax section5 container-fluid hideme">
+            <div class="overlay">
+                <!-- <p style="color: white;">After gradutating from secondary school. I realised that I have a passion for programming, which is why I took up a course in social media and web devlopment. Where I pick up a more in depth knowledge in web development and design of marketing materials.</p> -->
+                <h1>Now what?</h1>
+                <p style="color: white;"> </p>
+            </div>
+        </section>
+        <!-- contents in parallax end -->
+    </section>
+    </main>
+    <!-- script for website -->
+    <!-- Bootstrap core JavaScript -->
+    <script src="js/jquery/jquery.min.js"></script>
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="js/jquery-easing/jquery.easing.min.js"></script>
+    <script src="js/navbar.js"></script>
+</body>
+
+</html>

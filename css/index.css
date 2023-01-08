@@ -127,3 +127,8 @@ ul .ml-auto{
 .Nbutton:hover{/*Give the effects for the navigation button on hover*/
 	color:#fff !important;
 }
+footer{
+	height: 10%;
+	width: 100%;
+	position: absolute;
+}

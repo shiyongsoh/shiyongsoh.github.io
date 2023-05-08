@@ -3,7 +3,7 @@
 // 	after duplicating like a mad man, I think I am just going to make a script to duplicate all my certs instead.....
 // 	so just by copying and pasting the name repeatedly, I would be able to continue doing this until everything is up!
 // 
-function thingsToShow(name,achivementName, alternateText = 0, modalContent, modalTitle,moreContent,shortContent){
+function thingsToShow(name,achivementName, alternateText = 0, modalGroup = 0, modalTitle,moreContent,shortContent){
     displayAt = document.getElementById("contentToShow");
     certShow = document.createElement("a");
     certShow.setAttribute("class", "col-sm-4 col-lg-3 mr-5 certificate");
@@ -41,7 +41,14 @@ function thingsToShow(name,achivementName, alternateText = 0, modalContent, moda
     modalFooter = document.createElement('div');
 
     //appending whatever was created
-    displayAt.appendChild(certShow);
+    console.log(modalGroup)
+    if(modalGroup != "hmm"){
+        document.getElementById(modalGroup).appendChild(certShow);
+    }
+    else{
+
+        displayAt.appendChild(certShow);
+    }
     certShow.appendChild(certContent);
     certContent.appendChild(certImage);
     certShow.appendChild(certFigCaption);

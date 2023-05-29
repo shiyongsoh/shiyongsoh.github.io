@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils/control_utils.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/holistic/holistic.js" crossorigin="anonymous"></script>
+
+  <style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    .gameCanvas {
+
+        height: 100%;
+    }
+
+    .gameCanvas>canvas {
+        width: 100%;
+        height: min-content;
+        z-index: 0;
+    }
+
+    .gameCanvas>#gameBackground {
+        width: 100%;
+        
+        
+        z-index: 1;
+    }
+
+    .gameCanvas>#monster {
+        width: 80%;
+        
+    }
+
+    /* #monsterBackground{
+        background-image:url('images/bat.svg');
+        background-color: #cccccc;
+    }*/
+    #monster {
+        margin: 0 auto;
+    }
+
+    .gameBanner {
+        z-index: 0;
+        position: absolute;
+        width: 50%;
+        margin: auto 0;
+        text-align: center;
+        display: block;
+        left: 27%;
+    }
+
+    .output_canvas {
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 3;
+    }
+
+    /*presentation config*/
+    .rightAnkle {
+        display: none;
+    }
+
+    #score {
+        display: none;
+    }
+
+    button {
+        display: none;
+    }
+    .container{
+        display:block;
+        position: relative;
+    }
+.doneScreen{
+        display:none;
+        position: absolute;
+        width: 64%;
+		left:19%;
+        
+    }
+</style>
+</head>
+
+<body>
+    <div class='container'>
+        
+        <button onclick="nightmode()">Night mode</button>
+        <button onclick="daymode()">Day mode</button>
+        <video class="input_video" style='display:none;'></video>
+        <!-- <p>points:</p> -->
+        <p id="score">Press start to begin, score 30 points, after 10 points, diamond footwork will be prompted</p>
+        <p id="gameTimeCountdown"></p>
+        <p class='rightAnkle'></p>
+        <p class='rightAnkle'></p>
+        <p class='rightAnkle'></p>
+        <!-- <button id='startGame' onclick="gameStart()">Start!</button> -->
+    
+        <div class="gameCanvas" style="position: relative;">
+            <img id="gameBackground" src="images/things.svg" style="z-index:0; position:absolute;">
+            <img class="gameBanner" src="images/Exile-L1-DiamondFootwork.svg">
+            <img class="gameBanner" src="images/Exile-L1-RangingFootwork_1.svg">
+            
+            <a href="https://kidskq.com/"><img id="companylogo" src="images/cropped-logowhite-8-2048x711.png" style="z-index:0; position:absolute; background:white; opacity: 50%; width:20%; margin-left:80%"></a>
+            <!-- <img id='monster' src='images/bat.svg' style="z-index:1; position:absolute;"></img> -->
+    
+            <!--<div id='monsterBackground'></div>-->
+            <canvas class="output_canvas" width="1280px" height="720px"></canvas>
+            <canvas class="output_canvas" width="1280px" height="720px"></canvas>
+            <canvas class="output_canvas" width="1280px" height="720px"></canvas>
+            <canvas class="output_canvas" width="1280px" height="720px"></canvas>
+            <canvas class="output_canvas" width="1280px" height="720px"></canvas>
+            <canvas class="output_canvas" width="1280px" height="720px"></canvas>
+            <canvas class="output_canvas" width="1280px" height="720px"></canvas>
+        </div>
+        <p style="position: absolute; display:block; color:white; margin:10% 25%; text-align:center; width:50%;">Press enter to start, press enter again to pause the game, closing unused tabs will increase performance</p>
+    </div>
+        <h1 id='prompter' style="position: relative; display:block; color:white;"></h1>
+        <img src="images/Startbtn.svg" id="startGame" onclick="startButton()" style="display: block; z-index: 1; position:absolute; width:20%; margin-left:41%; margin-top:40%;">
+	<img class="doneScreen" src="images/EndofGame-v2.gif" ></img>
+        
+</body>
+</html>
+<script>
+    const videoElement = document.getElementsByClassName('input_video')[0];
+    const canvasElement = document.getElementsByClassName('output_canvas')[0];
+    const ctx = canvasElement.getContext('2d');
+    ctx.translate(canvasElement.width / 1, 1);
+    ctx.scale(-1, 1);
+    const drawElement = document.getElementsByClassName('output_canvas')[1];
+    const drawThe = drawElement.getContext('2d');
+    drawThe.translate(canvasElement.width / 1, 1);
+    drawThe.scale(-1, 1);
+    const promptElement = document.getElementsByClassName('output_canvas')[2];
+    const promptScreen = promptElement.getContext('2d')
+
+    const drawScreen = document.getElementsByClassName('output_canvas')[3];
+    const drawOn = drawScreen.getContext('2d')
+    const effectsScreen = document.getElementsByClassName('output_canvas')[4];
+    const drawEffects = effectsScreen.getContext('2d')
+    drawEffects.translate(canvasElement.width / 1, 1);
+    drawEffects.scale(-1, 1);
+    drawScreen.style.display = "none"
+    
+    var score = 0 
+    var timerDisplay = document.getElementById('gameTimeCountdown')
+    var gameRan = false
+
+    const fingers = {"wrist": 0,"thumb_cmc": 1,"thumb_mcp": 2,"thumb_ip": 3,"thumb_tip": 4,"index_finger_mcp": 5,"index_finger_pip": 6,"index_finger_dip": 7,"index_finger_tip": 8,"middle_finger_mcp": 9,"middle_finger_pip": 10,"middle_finger_dip": 11,"middle_finger_tip": 12,"ring_finger_mcp": 13,"ring_finger_pip": 14,"ring_finger_dip": 15,"ring_finger_tip": 16,"pinky_mcp": 17,"pinky_pip": 18,"pinky_dip": 19,"pinky_tip": 20};
+        const bodyPose = {"nose": 0,"left_eye_inner": 1,"left_eye": 2,"left_eye_outer": 3,"right_eye_inner": 4,"right_eye": 5,"right_eye_outer": 6,"left_ear": 7,"right_ear": 8,"mouth_left": 9,"mouth_left": 10,"left_shoulder": 11,"right_shoulder": 12,"left_elbow": 13,"right_elbow": 14,"left_wrist": 15,"right_wrist": 16,"left_pinky": 17,"right_pinky": 18,"left_index": 19,"right_index": 20,"left_thumb": 21,"right_thumb": 22,"left_hip": 23,"right_hip": 24,"left_knee": 25,"right_knee": 26,"left_ankle": 27,"right_ankle": 28,"left_heel": 29,"right_heel": 30,"left_foot_index": 31,"right_foot_index": 32}
+    var leftSideWeaponCanvas = document.getElementsByClassName('output_canvas')[5];
+    var leftSidWeapon = leftSideWeaponCanvas.getContext('2d')
+    leftSidWeapon.translate(leftSideWeaponCanvas.width / 1, 1);
+    leftSidWeapon.scale(-1, 1);
+    var rightSideWeaponCanvas = document.getElementsByClassName('output_canvas')[6];
+    var rightSidWeapon = rightSideWeaponCanvas.getContext('2d')
+    rightSidWeapon.translate(rightSideWeaponCanvas.width / 1, 1);
+    rightSidWeapon.scale(-1, 1);
+        const bodyPosition = []; //this is a 2 diemensional array, to be accessed via handDetect()
+    const average = arr => arr.reduce((a, b) => a + b, 0) / arr.length;
+    var originalX = 0;
+    var originalY = 0;
+    animateX = 0
+    animateY = 0
+    var unnormaliseX = 0
+    var unnormaliseY = 0
+
+    var stoneSize = 1;
+    var stoneDone = false
+    var gameRunning = false
+    var stoneCall; //this is the interval as called in stoneZoomingIn()
+    var prompter = document.getElementById('prompter');
+    var gameBanner = document.getElementsByClassName('gameBanner');
+    normalisedCoordinatesValue = []
+    var startGameButton = document.getElementById('startGame')
+    var stone = new Image();
+    stone.src = 'images/stone.svg'
+    var explosion
+    var explodeFrames = []
+    var startFrame = 0
+    var endFrame = 21
+    var framesLoaded = 0
+    var currentFrame = startFrame;
+    var pingPong = true
+    var loop = false
+
+    window.addEventListener('keydown', function (e) {
+        //document.querySelector('p').innerHTML = `You pressed ${e.key}`;
+        console.log(e.key);
+        if (e.key == "Enter") {
+           
+            if(gameRunning != true){
+
+                gameRunning = true
+            }
+            else{
+                gameRunning = false
+            }
+            gameStart()
+        }
+    }, false);
+    function startButton(){
+        if(gameRunning != true){
+                document.getElementsByClassName('doneScreen')[0].style.display = 'none'
+                gameRunning = true
+                
+            }
+            else{
+                gameRunning = false
+            }
+            gameStart()
+            
+
+    }
+    function test(){
+        console.log('test is called')
+    }
+    function normaliseCoordinates(originalX, originalY) {
+        minX = 0;
+        maxX = canvasElement.width;
+        minY = 0;
+        maxY = canvasElement.height;
+       /* normalizedX = (originalX - minX) / (maxX - minX);
+        normalizedY = (originalY - minY) / (maxY - minY);*/
+        diagonal = Math.sqrt((maxX-minX)*(maxX-minX) + (maxY-minY)*(maxY-minY)) 
+        /*normalizedX = (originalX - minX)/(diagonal) 
+        normalizedY = (originalY - minY)/(diagonal)*/
+        normalizedX = originalX/maxX
+        normalizedY = originalY/maxY
+        //unnormalise()
+        return [normalizedX, normalizedY];
+    }
+
+    function unnormalise(x,y) {
+        /*normalizedX = (originalX + minX) * (maxX + minX);
+        normalizedY = (originalY + minY) * (maxY + minY);*/
+        //diagonal = Math.sqrt((maxX-minX)*(maxX-minX) + (maxY-minY)*(maxY-minY)) 
+        x = canvasElement.width*x
+        y = canvasElement.height*y
+        return [x,y]
+    }
+
+    function drawCenteredImage(img, x, y, width, height) {
+        //drawThe draws the image of the stone, drawOn draws the hitbox
+        var clearRect = drawThe.clearRect(0, 0, canvasElement.width, canvasElement.height);
+        drawThe.drawImage(img, x - width / 2, y - height / 2, width, height);
+        drawOn.beginPath();
+        drawOn.arc(x+20,y+20,height/3,0,2*Math.PI)
+        drawOn.stroke()
+        /*
+        draw outline
+        */
+    }
+    //hande's stone animation
+    function animatingStone(randomX = "", randomY = "") {
+        var randomX = getRandomNumbers(1, canvasElement.width);
+        var randomY = getRandomNumbers(1, canvasElement.height / 2);
+        if (stoneSize <= 1000) {
+            stoneSize += 10
+        }
+        if (originalX != '' && originalY != '') {
+            randomX = originalX;
+            randomY = originalY;
+        }
+        if (stoneSize >= 1000) {
+            //debugger
+            stoneDone = true
+        }
+        
+        drawCenteredImage(stone, randomX, randomY, (stone.width * stoneSize) / 100, (stone.height * stoneSize) / 100)
+        originalX = randomX;
+        originalY = randomY;
+        normalisedCoordinatesValue = normaliseCoordinates(randomX, randomY)
+        stoneCall = requestAnimationFrame(animatingStone)
+        
+    }
+
+    function handOrientation(handRoot, middleFingerRoot){
+        var orientaiton; //I know this is a spelling error, I dont want to change it
+        if(Math.abs(handRoot.x,handRoot.y)<0.05){ //since tangen of 0 is infinite
+            m = 1000000000
+        }
+        else{
+            m = Math.abs((middleFingerRoot.y-handRoot.y/(middleFingerRoot.x - handRoot.x)))/10
+        }
+        //console.log(m)
+        //document.getElementById('handOrientationValue').innerHTML = m.toString()
+        if(m>=0 && m<=1){
+            if(middleFingerRoot.x > handRoot.x){
+                orientaiton = 'left'
+            }
+            else{
+                orientaiton = 'right'
+            }
+        }
+       
+        if(m>1){ //since y decreases upwards
+            if(middleFingerRoot.y < handRoot.y){
+                orientaiton = 'up'
+            }
+            else{
+                orientaiton =  'down'
+            }
+        }
+        return orientaiton
+    }
+    function angleInBetween(cx, cy, ex, ey) {
+        var dy = ey - cy;
+        var dx = ex - cx;
+        var theta = Math.atan2(dy, dx); // range (-PI, PI]
+        //theta *= 180 / Math.PI; // rads to degs, range (-180, 180]
+        //if (theta < 0) theta = 360 + theta; // range [0, 360)
+        return theta;
+      }
+
+      
+    function drawRightHandWeapon(handCoordinates){
+        //handCoordinate will be array of xyz
+        //hand coordinate consist of two points for the weapons to be in
+        //console.log(handCoordinates); 
+        var indexFinger = unnormalise(handCoordinates[0][0],handCoordinates[0][1])
+                var pinky = unnormalise(handCoordinates[1][0],handCoordinates[1][1])
+        //vector of the line
+            //1. find the angle
+            let x = (indexFinger[0] - pinky[0])
+            let y = indexFinger[1] - pinky[1]
+            //var angle = Math.atan(x/y)
+            //var angle = Math.atan2(y,x)
+            //angle = angle * (180/Math.PI)
+        //var angle = Math.atan( indexFinger[1] - pinky[1], indexFinger[0] - pinky[1] ) * ( 180 / Math.PI )
+        //var angle = Math.atan( indexFinger[1] - pinky[1], indexFinger[0] - pinky[1] ) 
+        /*if (angle < 0.0) {
+            angle+=360.0
+        }*/
+        var angle = angleInBetween(pinky[0],pinky[1],indexFinger[0],indexFinger[1]);
+        var lengthOfProp = 300
+            //console.log(angle)
+            var otherEndX = indexFinger[0]+lengthOfProp*Math.cos(angle);
+            var otherEndY = indexFinger[1]+lengthOfProp*Math.sin(angle);
+            rightSidWeapon.clearRect(0,0, drawElement.width, drawElement.height)
+            rightSidWeapon.beginPath();
+            //for(x in handCoordinates){
+                
+                rightSidWeapon.strokeStyle = 'orange'
+                rightSidWeapon.lineWidth = 25;
+
+                rightSidWeapon.moveTo(pinky[0],pinky[1])
+                //rightSidWeapon.lineTo(indexFinger[0] *indexFinger[0],indexFinger[1] * indexFinger[1])
+                rightSidWeapon.lineTo(otherEndX,otherEndY)
+                /*rightSidWeapon.translate(pinky[0], pinky[1])
+                //rightSidWeapon.rotate(angle);
+                rightSidWeapon.translate(-pinky[0], -pinky[1])*/
+                //rightSidWeapon.transform()
+                //rightSidWeapon.lineTo(p,q)
+                //rightSidWeapon.log(unnormalise(handCoordinates[x][0]))
+        // }
+        rightSidWeapon.stroke();
+               // debugger
+                
+            
+            //console.log(angle.toFixed())
+            otherEndX = []
+            otherEndY = []
+            for(length = 0;length<=lengthOfProp;length+=60){
+                //indexFinger[0]+length*Math.cos(angle);
+                otherEndX.push(indexFinger[0]+length*Math.cos(angle))
+            }
+            for(length = 0;length<=lengthOfProp;length+=60){
+                
+                otherEndY.push(indexFinger[1]+length*Math.sin(angle))
+            }
+            return [otherEndX,otherEndY]
+    }
+    function drawLeftHandWeapon(handCoordinates){
+        //handCoordinate will be array of xyz
+        //hand coordinate consist of two points for the weapons to be in
+        //console.log(handCoordinates); 
+        var indexFinger = unnormalise(handCoordinates[0][0],handCoordinates[0][1])
+                var pinky = unnormalise(handCoordinates[1][0],handCoordinates[1][1])
+        //vector of the line
+            //1. find the angle
+            let x = (indexFinger[0] - pinky[0])
+            let y = indexFinger[1] - pinky[1]
+            //var angle = Math.atan(x/y)
+            //var angle = Math.atan2(y,x)
+            //angle = angle * (180/Math.PI)
+        //var angle = Math.atan( indexFinger[1] - pinky[1], indexFinger[0] - pinky[1] ) * ( 180 / Math.PI )
+        //var angle = Math.atan( indexFinger[1] - pinky[1], indexFinger[0] - pinky[1] ) 
+        /*if (angle < 0.0) {
+            angle+=360.0
+        }*/
+        var angle = angleInBetween(pinky[0],pinky[1],indexFinger[0],indexFinger[1]);
+        var lengthOfProp = 300
+           // console.log(angle)
+            var otherEndX = indexFinger[0]+lengthOfProp*Math.cos(angle);
+            var otherEndY = indexFinger[1]+lengthOfProp*Math.sin(angle);
+            leftSidWeapon.clearRect(0,0, drawElement.width, drawElement.height)
+            leftSidWeapon.beginPath();
+            //for(x in handCoordinates){
+                
+                leftSidWeapon.strokeStyle = 'orange'
+                leftSidWeapon.lineWidth = 25;
+                leftSidWeapon.moveTo(pinky[0],pinky[1])
+                //leftSidWeapon.lineTo(indexFinger[0] *indexFinger[0],indexFinger[1] * indexFinger[1])
+                leftSidWeapon.lineTo(otherEndX,otherEndY)
+                /*leftSidWeapon.translate(pinky[0], pinky[1])
+                //leftSidWeapon.rotate(angle);
+                leftSidWeapon.translate(-pinky[0], -pinky[1])*/
+                //leftSidWeapon.transform()
+                //leftSidWeapon.lineTo(p,q)
+                //console.log(unnormalise(handCoordinates[x][0]))
+        // }
+        leftSidWeapon.stroke();
+               // debugger
+                
+            
+            //console.log(angle.toFixed())
+            otherEndX = []
+            otherEndY = []
+            for(length = 0;length<=lengthOfProp;length+=60){
+                //indexFinger[0]+length*Math.cos(angle);
+                otherEndX.push(indexFinger[0]+length*Math.cos(angle))
+            }
+            for(length = 0;length<=lengthOfProp;length+=60){
+                
+                otherEndY.push(indexFinger[1]+length*Math.sin(angle))
+            }
+            return [otherEndX,otherEndY]
+    }
+
+
+    //stone explosion animations
+    function getRandomNumbers(min, max, exclusion = '') {
+        if (exclusion == '') {
+
+            return Math.random() * max + min;
+        } else {
+            var randomNumber = 0
+            if (randomNumber < exclusion[0]) {
+                return randomNumber
+            } else if (randomNumber > exclusion[1]) {
+                return randomNumber
+            } else {
+                getRandomNumbers(min, max, exclusion)
+            }
+        }
+    }
+    //draw center image to make scaling easier and ensure that it is scaled within the center and not move anywhere during scaling
+    function drawCenteredImage(img, x, y, width, height) {
+        //drawThe draws the image of the stone, drawOn draws the hitbox
+        var clearRect = drawThe.clearRect(0, 0, canvasElement.width, canvasElement.height);
+        drawThe.drawImage(img, x - width / 2, y - height / 2, width, height);
+        drawOn.beginPath();
+        drawOn.arc(x+20,y+20,height/3,0,2*Math.PI)
+        drawOn.stroke()
+        /*
+        draw outline
+        */
+    }
+    //hande's stone animation
+    function animatingStone(randomX = "", randomY = "") {
+        var randomX = getRandomNumbers(1, canvasElement.width);
+        var randomY = getRandomNumbers(1, canvasElement.height / 2);
+        if (stoneSize <= 500) {
+            stoneSize += 10
+        }
+        if (originalX != '' && originalY != '') {
+            randomX = originalX;
+            randomY = originalY;
+        }
+        if (stoneSize >= 500) {
+            //debugger
+            stoneDone = true
+        }
+        
+        drawCenteredImage(stone, randomX, randomY, (stone.width * stoneSize) / 100, (stone.height * stoneSize) / 100)
+        originalX = randomX;
+        originalY = randomY;
+        normalisedCoordinatesValue = normaliseCoordinates(randomX, randomY)
+        stoneCall = requestAnimationFrame(animatingStone)
+        
+    }
+
+    function promptScreenText(text) {
+
+                       
+                        promptScreen.globalAlpha = 0.2;
+                        promptScreen.fillStyle = "#000000";
+                        promptScreen.fillRect(0, 0, drawElement.width, drawElement.height)
+                       
+                        promptScreen.globalAlpha = 1.0;
+                        promptScreen.font = "300% Arial"
+                        promptScreen.fillStyle = "#ffffff";
+                        promptScreen.textAlign = "center";
+                       
+                        promptScreen.fillText(text, drawElement.width / 2, drawElement.height / 2);
+                       
+    }
+    
+    function padWithZeroes(number, length) {
+        var paddedNumber = '' + number;
+        while (paddedNumber.length < length) {
+          paddedNumber = '0' + paddedNumber;
+        }
+        return paddedNumber;
+      }
+    function loadFrames(callback) {
+        for (var i = startFrame; i <= endFrame; i++) {
+            explodeFrames[i] = new Image();
+            explodeFrames[i].src = 
+              'video/png/explode'+padWithZeroes(i,2) + '.png';
+              explodeFrames[i].onload = function(){ 
+                framesLoaded++; 
+                if (framesLoaded >= endFrame-startFrame) {
+                  callback();
+                }
+            };
+          
+        }
+    }
+    function frameAnimation(x,y) {
+       
+        drawEffects.clearRect(0,0, drawElement.width,drawElement.height)
+            if(animateX ==0){
+                animateX = x
+            }
+            if(animateY ==0){
+                animateY = y
+            }
+            if(animateX !=0){
+                x=animateX
+            }
+            if(animateY!=0){
+                y=animateY
+            }
+            
+            drawEffects.drawImage(explodeFrames[currentFrame],x - explodeFrames[currentFrame].width/2?.toFixed(),y-explodeFrames[currentFrame].width/2?.toFixed())
+            
+         
+        // If last frame
+        if (currentFrame == endFrame) {
+          if (!loop){
+            cancelAnimationFrame(explosion);
+            drawEffects.clearRect(0,0, drawElement.width,drawElement.height)
+            currentFrame = startFrame
+            animateX = 0
+            animateY = 0
+            return
+          }
+      
+          if (pingPong) {
+            forwards = false; // Go backwards
+          } else {
+            currentFrame = startFrame; // Start over
+          }
+          // If first frame
+        } else if (currentFrame == startFrame) {
+          if (pingPong) {
+            forwards = true;
+          }
+        }
+      
+      
+        if (forwards) {
+          currentFrame++;
+        } else {
+          currentFrame--;
+        }
+       
+        requestAnimationFrame(frameAnimation);
+        console.log('frameAnimation')
+      }
+
+    //detect user movement on the  X axis
+    function calculatedCoordsDifference(){
+        var calculatedCoords = 0
+        for(var coords of bodyPosition){
+            
+            if(calculatedCoords == 0){
+                calculatedCoords=coords
+            }
+            else{
+                
+                calculatedCoords = calculatedCoords- coords
+            }
+            
+        }
+        return calculatedCoords
+    }
+
+    //main function
+    function onResults(results) {
+      ctx.clearRect(0, 0, canvasElement.width, canvasElement.height);
+          ctx.globalCompositeOperation = 'source-over';
+         
+        
+        ctx.clearRect(0, 0, canvasElement.width, canvasElement.height);
+        try{
+
+        
+            ctx.drawImage(results.segmentationMask, 0, 0,
+                canvasElement.width, canvasElement.height);
+        }
+        catch(e){}
+
+        // Only overwrite existing pixels.
+        ctx.globalCompositeOperation = 'source-in';
+        //canvasCtx.fillStyle = '#00FF00';
+        ctx.drawImage(
+          results.image, 0, 0, canvasElement.width, canvasElement.height);
+        
+      
+        try{
+            //is a 2 diemensional array, consisting of the index finger and  pinky root. As this is how a stick would generally point when held, they rest on the knuckle bones
+            
+            
+            try{
+                rightHandWeapons = [[results.rightHandLandmarks[fingers['index_finger_mcp']].x,results.rightHandLandmarks[fingers['index_finger_mcp']].y,results.rightHandLandmarks[fingers['index_finger_mcp']].z],[results.rightHandLandmarks[fingers['pinky_mcp']].x,results.rightHandLandmarks[fingers['pinky_mcp']].y,results.rightHandLandmarks[fingers['pinky_mcp']].z]]
+                var rightWeapons = drawRightHandWeapon(rightHandWeapons)
+                //console.log(rightWeapons)
+            }
+            catch(e){}
+            //if user is moving left and right
+           
+            
+            //check if stone is being touched
+            //if(results.poseLandmarks[bodyPose['right_ankle']].visibility >=0.5 || results.poseLandmarks[bodyPose['left_ankle']].visibility >= 0.5){
+            if(results.poseLandmarks[bodyPose['right_wrist']].visibility >= 0.5 || results.poseLandmarks[bodyPose['left_wrist']].visibility >= 0.5) {
+
+                
+                    //TODO 
+                    promptScreen.clearRect(0, 0, drawElement.width, drawElement.height)
+                    positions = [results.poseLandmarks[bodyPose['right_shoulder']].x,results.poseLandmarks[bodyPose['left_shoulder']].x,results.poseLandmarks[bodyPose['left_hip']].x,results.poseLandmarks[bodyPose['right_hip']].x]
+                    bodyPosition.push(average(positions))
+                    if(bodyPosition.length>=3){
+                        bodyPosition.shift()
+                    }
+                    var calculatedCoords = calculatedCoordsDifference()
+                    /*console.log(results.poseLandmarks[bodyPose['right_wrist']].x);
+                    console.log(results.poseLandmarks[bodyPose['left_wrist']].x)*/
+                    if(calculatedCoords>=0.01){
+                        //prompter.innerHTML = 'Moving right'
+                        if(results.poseLandmarks[bodyPose['right_ankle']].x > results.poseLandmarks[bodyPose['left_ankle']].x){
+                            prompter.innerHTML = '<h1>use your right leg</h1>'
+                            console.log('use your left leg')
+                        }
+                    }
+                    if(calculatedCoords<=-0.01){
+                        //prompter.innerHTML = 'Moving left'
+                        if(results.poseLandmarks[bodyPose['right_ankle']].x > results.poseLandmarks[bodyPose['left_ankle']].x){
+                            prompter.innerHTML = '<h1>use your left leg</h1>'
+                            console.log('use your right leg')
+                        }
+                    }
+                    var unnormalisedBodyPosition = [rightWeapons[0], rightWeapons[1]]
+                    /*if the stone is being touched*/
+                    //console.log(leftWeapons)
+                    //debugger
+                    for(x in rightWeapons[0]){
+                        if(drawOn.isPointInPath(Math.trunc(rightWeapons[0][x]),Math.trunc(rightWeapons[1][x]))&&gameRunning ){
+                                
+                                
+                            //this code will clear the drawthe canvas from the stones and cancel the animation, start another one, add the score, reset the coordinates so that a random coordinate will be generated
+                            drawOn.clearRect(0, 0, drawElement.width, drawElement.height);
+                            cancelAnimationFrame(stoneCall)
+                            stoneCall = requestAnimationFrame(animatingStone)
+                            score++
+                            document.getElementById('score').innerHTML = score;
+                            originalX = 0
+                            originalY = 0
+                            stoneSize = 0
+                            stoneDone = false
+                            explosion = frameAnimation(unnormalisedBodyPosition[0][x],unnormalisedBodyPosition[1][x])
+                        }
+                    }
+                    //if the stone is not being touched
+                    if (stoneDone && gameRunning) {
+                        //console.log('condition 2 is called')
+                                //this code will clear the drawthe canvas from the stones and cancel the animation, start another one, add the score, reset the coordinates so that a random coordinate will be generated
+                                //console.log('first condition is running')
+                                cancelAnimationFrame(stoneCall)
+                                stoneCall = requestAnimationFrame(animatingStone)
+                                
+                                document.getElementById('score').innerHTML = score;
+                                originalX = 0
+                                originalY = 0
+                                stoneSize = 0
+                                stoneDone = false
+                                drawThe.clearRect(0, 0, drawElement.width, drawElement.height);
+                    }
+                    if(!gameRunning && score >=1){
+                        promptScreenText('paused')
+                        stoneSize = 0
+                        cancelAnimationFrame(stoneCall)
+                    }
+                    if(!gameRunning && score<=0 && !gameRan){
+                        promptScreenText('press start to play')
+                        stoneSize = 0
+                        cancelAnimationFrame(stoneCall)
+                    }
+
+                } else {
+                    
+                    //ankleNotDetected()
+                    promptScreenText('wrist not detected')
+                }
+        }
+        catch(e){
+            //console.log(e)
+        }
+        promptScreen.font = "300% Arial"
+        promptScreen.fillStyle = "#ffffff"
+        promptScreen.fillText('points' + score, promptElement.width / 8, promptElement.height / 8);
+    }
+    
+    const holistic = new Holistic({locateFile: (file) => {
+      return `https://cdn.jsdelivr.net/npm/@mediapipe/holistic/${file}`;
+    }});
+    holistic.setOptions({
+      modelComplexity: 1,
+      smoothLandmarks: true,
+      enableSegmentation: true,
+      smoothSegmentation: true,
+      refineFaceLandmarks: true,
+      minDetectionConfidence: 0.1,
+      minTrackingConfidence: 0.4
+    });
+    holistic.onResults(onResults);
+    
+    const camera = new Camera(videoElement, {
+      onFrame: async () => {
+        await holistic.send({image: videoElement});
+      },
+      width: 1280,
+      height: 720
+    });
+    camera.start();
+    
+    function gameStart() {
+        drawOn.clearRect(0, 0, drawElement.width, drawElement.height)
+        stoneCall = requestAnimationFrame(animatingStone)
+        var seconds = 59
+
+        timerDisplay.innerHTML = '';
+        //timerDisplay.innerHTML = 'starting game'
+        console.log('gameStart is being pressed');
+
+        function countDown() {
+            //timerDisplay.innerHTML = seconds;
+            //determine if the number is more than 10 and is even on the tens place, this determines what footwork banner to display in the game
+            if (score % 20 == 10) {
+                for (var banner of gameBanner) {
+                    banner.style.display = 'none';
+                }
+                gameBanner[(score % 10) / 10].style.display = 'block'
+                
+            }
+            console.log(score % 20)
+            //if (score >= 30 && gameRunning) {
+            if (seconds <=0 && gameRunning) {
+                clearInterval(timer);
+                console.log('you win')
+                //timerDisplay.innerHTML = "Win!"
+                drawThe.clearRect(0, 0, drawElement.width, drawElement.height)
+                drawThe.globalAlpha = 0.2;
+                drawThe.fillStyle = "#000000";
+                drawThe.fillRect(0, 0, drawElement.width, drawElement.height)
+                drawThe.translate(drawElement.width / 1, 1)
+                drawThe.globalAlpha = 1.0;
+                drawThe.font = "300% Arial"
+                drawThe.fillStyle = "#ffffff";
+                drawThe.textAlign = "center";
+                drawThe.scale(-1, 1)
+                drawThe.fillText('Total score: ' + score, drawElement.width / 2, drawElement.height / 2);
+                drawThe.fillText('You passed ', drawElement.width / 2, drawElement.height / 2.3);
+                normalisedCoordinatesValue = [];
+                gameRunning = false
+                score = 0;
+                gameRan = true;
+                
+                originalX = 0;
+                originalY = 0;
+                animateX = 0
+                animateY = 0
+                unnormaliseX = 0
+                unnormaliseY = 0
+                cancelAnimationFrame(stoneCall)
+
+            } 
+            
+            return seconds--
+        }
+        /*startGameButton.onclick = ()=>{
+            if(seconds>=0){
+                console.log('start game button is pressed')
+                seconds = 0;
+            }
+            return
+        }*/
+        timer = setInterval(countDown, 1000)
+
+        countDown()
+        return
+    }
+    setInterval(()=>{prompter.innerHTML = ''}, 2000)
+    loadFrames(function() {
+        console.log('loaded!');
+        //frameAnimation();
+      });
+    </script>

@@ -81,7 +81,7 @@
 			</div>
 			<div class="container align-items-center caption">
 				  <h1 class="mx-auto my-0 text-uppercase webtitle">Projects</h1>
-				  <h3 class="mx-auto mt-2 mb-1 websubtitle">My graphic design work</h3>
+				  <h3 class="mx-auto mt-2 mb-1 websubtitle">My works</h3>
 				  <a href="#next" class="btn btn-primary Nbutton">Look down</a>
 				  
 			</div>
@@ -98,8 +98,31 @@
 		<!--Class show will let an image to show at the frontpage with parallax effect
 			Hide will hide give the picture, giving the attribute of display none to the picture
 		-->
+
 		<article class="container-fluid bg-light" id="next"><!--ID next is use to link the button from the top of tbe webpage, scrolling the user down here-->
-			<h3 class="section-subheading text-primary text-uppercase pt-5 text-center webtitle">My Achievements</h3>
+			<h3 class="section-subheading text-primary text-uppercase pt-5 text-center webtitle">Development work</h3>
+			<section class="row justify-content-lg-center">
+				
+				<!-- This gives the image a caption and a preview -->
+				<a class="col-sm-4 col-lg-3 mr-5 certificate" onclick="popup('computerVisionGame')" href="#computerVisionGame">
+				<figure>
+						<img class="img-fluid" src="images/computerVision/animatedBat.gif" alt="2018 CDC & CCC ITE Schloarship">
+						<figcaption class="portfolio-caption">
+							<h4 class="service-heading">Physical Martial Arts game</h4>
+							<p class="text-muted">An engaging game for children to learn martial arts with the help of computer vision. Click on to find out
+									more, webcam or camera needed. <i class="fas fa-arrow-right"></i></p>
+						</figcaption>
+				</figure>
+				</a>
+				<!--This seperates one image and caption from the other-->
+				
+					
+			</section>
+			
+			
+		</article>
+		<article class="container-fluid bg-light"><!--ID next is use to link the button from the top of tbe webpage, scrolling the user down here-->
+			<h3 class="section-subheading text-primary text-uppercase pt-5 text-center webtitle">Design work</h3>
 			<section class="row justify-content-lg-center">
 				
 				<!-- This gives the image a caption and a preview -->
@@ -148,13 +171,42 @@
 					</figure>
 					</a>
 					<!--This seperates one image and caption from the other-->
+					
 			</section>
 			
 			
 		</article>
 	</main>
 		<!--This html codes will hide from the user unless it it clicked on-->
-	
+		<!--Hides this photo away-->
+		<section class="modal" id="computerVisionGame" data-backdrop="static"  >
+			<figure class="modal-dialog modal-lg">
+				<figcaption class="modal-content" style="width:128%; margin:0 -14%;">
+					<div class="modal-header">
+						<h2 class="modal-title">Physical Martial Arts Game</h2>
+					</div>
+						
+					<div class="modal-body d-flex justify-content-center">
+						<div class="container">
+							<iframe src="lesson5WithAcktecLogo.html" width="100%" height="300" style="border:none;" allowfullscreen="true" id="acktecGame">
+							</iframe>
+							<button type="button" class="btn btn-info" onclick="acktecGame.requestFullscreen()">Full Screen</button>
+						</div>
+					<div class="container">
+						<p>This project was done during my full time job with <a href="https://kidskq.com" target="_blank">Acktec(KiQs)</a>, an edutech start up from singapore. Where this game is used to engage children to learn martial arts. With the objective of improving the childrens hand and leg movements while making it engaging and fun for all age groups.</p>
+						<p>Project reproduce with permisssion from Acktec, <a target="_blank" href="https://www.acktechnologies.com/">click here to learn more about them</a></p>
+					</div>
+					
+					</div> 
+					<div class="modal-footer" >
+						<button type="button" class="btn btn-secondary" onClick="popup('computerVisionGame')">Close</button>
+					</div>
+					
+				</figcaption>
+			</figure>
+		</section> 
+		<!--Seperates one popup from another-->
+		
 		<!--Hides this photo away-->
 		 <section class="modal" id="cny" onClick="popup('cny')">
 			<figure class="modal-dialog modal-lg">
@@ -263,7 +315,7 @@
 <script src="js/navbar.js"></script>
 	<script>
 	slideshow();
-
+	var acktecGame = document.getElementById('acktecGame');
 	</script>
 </body>
 

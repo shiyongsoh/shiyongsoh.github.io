@@ -102,11 +102,11 @@
         <!-- <button id='startGame' onclick="gameStart()">Start!</button> -->
     
         <div class="gameCanvas" style="position: relative;">
-            <img id="gameBackground" src="images/things.svg" style="z-index:0; position:absolute;">
-            <img class="gameBanner" src="images/Exile-L1-DiamondFootwork.svg">
-            <img class="gameBanner" src="images/Exile-L1-RangingFootwork_1.svg">
+            <img id="gameBackground" src="images/computerVision/things.svg" style="z-index:0; position:absolute;">
+            <img class="gameBanner" src="images/computerVision/Exile-L1-DiamondFootwork.svg">
+            <img class="gameBanner" src="images/computerVision/Exile-L1-RangingFootwork_1.svg">
             
-            <a href="https://kidskq.com/"><img id="companylogo" src="images/cropped-logowhite-8-2048x711.png" style="z-index:0; position:absolute; background:white; opacity: 50%; width:20%; margin-left:80%"></a>
+            <a href="https://kidskq.com/"><img id="companylogo" src="images/computerVision/cropped-logowhite-8-2048x711.png" style="z-index:0; position:absolute; background:white; opacity: 50%; width:20%; margin-left:80%"></a>
             <!-- <img id='monster' src='images/bat.svg' style="z-index:1; position:absolute;"></img> -->
     
             <!--<div id='monsterBackground'></div>-->
@@ -121,8 +121,8 @@
         <p style="position: absolute; display:block; color:white; margin:10% 25%; text-align:center; width:50%;">Press enter to start, press enter again to pause the game, closing unused tabs will increase performance</p>
     </div>
         <h1 id='prompter' style="position: relative; display:block; color:white;"></h1>
-        <img src="images/Startbtn.svg" id="startGame" onclick="startButton()" style="display: block; z-index: 1; position:absolute; width:20%; margin-left:41%; margin-top:40%;">
-	<img class="doneScreen" src="images/EndofGame-v2.gif" ></img>
+        <img src="images/computerVision/Startbtn.svg" id="startGame" onclick="startButton()" style="display: block; z-index: 1; position:absolute; width:20%; margin-left:41%; margin-top:40%;">
+	<img class="doneScreen" src="images/computerVision/EndofGame-v2.gif" ></img>
         
 </body>
 </html>
@@ -179,7 +179,7 @@
     normalisedCoordinatesValue = []
     var startGameButton = document.getElementById('startGame')
     var stone = new Image();
-    stone.src = 'images/stone.svg'
+    stone.src = 'images/computerVision/stone.svg'
     var explosion
     var explodeFrames = []
     var startFrame = 0
@@ -513,7 +513,7 @@
         for (var i = startFrame; i <= endFrame; i++) {
             explodeFrames[i] = new Image();
             explodeFrames[i].src = 
-              'video/png/explode'+padWithZeroes(i,2) + '.png';
+              'images/computerVision/video/png/explode'+padWithZeroes(i,2) + '.png';
               explodeFrames[i].onload = function(){ 
                 framesLoaded++; 
                 if (framesLoaded >= endFrame-startFrame) {
@@ -739,9 +739,10 @@
       width: 1280,
       height: 720
     });
-    camera.start();
+    
     
     function gameStart() {
+        camera.start();
         drawOn.clearRect(0, 0, drawElement.width, drawElement.height)
         stoneCall = requestAnimationFrame(animatingStone)
         var seconds = 59
